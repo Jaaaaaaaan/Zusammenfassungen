@@ -7,6 +7,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage{graphicx}
 \usepackage[margin=0.6in]{geometry}
 \setcounter{section}{1}
@@ -27,7 +28,28 @@
 
 
 
-\subsection{Beweis mittels vollständiger Induktion}
+\subsection{Beweis mittels vollständiger Induktion (Beispiel)}
+\textit{Beweis.}
+Die Aussage $A_{n}$ sei $\sum_{k=0}^{n} q^{k}= \dfrac{1-q^{n+1}}{1-q}$ mit $n \in \mathbb{N}, q \in \mathbb{R}, q \neq 1$.\\\\
+(IA): $n_{0}=0$: $\sum_{k=0}^{0} q^{k}=q^{0}=1= \dfrac{1-q^{0+1}}{1-q}$ \hspace{0.3cm} w.A.\\
+\hspace*{1cm}$\Rightarrow$ Es gilt $A_{0}$\\\\
+(IV): $\forall \tilde{n}: n_{0} \leq \tilde{n} \leq n:\sum_{k=0}^{\tilde{n}} q^{k}= \dfrac{1-q^{\tilde{n}+1}}{1-q}$\\\\
+(IS):$\sum_{k=0}^{n+1} q^{k}= \sum_{k=0}^{n} q^{k}+q^{n+1}\stackrel{\text{(IV)}}{=}\dfrac{1-q^{n+1}}{1-q}+q^{n+1}=\dfrac{1-q^{n+1}+(1-q)q^{n+1}}{1-q}$\\
+\hspace*{2.23cm}$=\dfrac{1-q^{n+1}+q^{n+1}-q^{n+2}}{1-q}=\dfrac{1-q^{(n+1)+1}}{1-q}$\\\\
+\hspace*{1cm}$\Rightarrow$ Damit ist die Behauptung für alle $n \in \mathbb{N}$ vollständig bewiesen
+\qed\\\\
+\begin{itemize}
+\item "Die Aussage $A_{n}$ sei..." nur in VL und AuD Skript, \textit{evtl.} wird sonst aber z.Z.: erwartet; IV muss auch nicht unbedingt notiert werden
+\item alles nochmal mit (n+1)+1 hinschreiben ist nicht nötig
+\item Varianten: $A_{n} \Rightarrow A_{n+1}$/ aus $A_{n}$ folgt $A_{n+1}$ für alle $n\in \mathbb{N}$\\
+ w.A. /Folglich gilt $A_{n}$ für alle $n \in \mathbb{N}, n \geq n_{0}$
+\item Bedenke dass z.T. auch nur für $n \in \mathbb{N}, n\geq k$ bewiesen wird (kein $\tilde{n}$)!! und $n_{0}=0$ nicht immer gelten muss
+\end{itemize}
+
+
+
+
+
 
 
 

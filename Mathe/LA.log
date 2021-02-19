@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.3)  19 FEB 2021 14:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.3)  19 FEB 2021 15:20
 entering extended mode
 **./LA.tex
 (LA.tex
@@ -243,31 +243,34 @@ s[] [] s[]\OT1/cmr/m/n/10 )$ ist der \OT1/cmr/bx/n/10 Spal-tenraum \OT1/cmr/m/n
 10 A\OT1/cmr/m/n/10 ))$ heit Spal-tenrang (entspricht
  []
 
-[3] (LA.aux) ) 
+[3] [4] (LA.aux) ) 
 Here is how much of TeX's memory you used:
- 2855 strings out of 479799
- 38063 string characters out of 2879641
- 330028 words of memory out of 3000000
- 19837 multiletter control sequences out of 15000+200000
- 539345 words of font info for 45 fonts, out of 3000000 for 9000
+ 2871 strings out of 479799
+ 38359 string characters out of 2879641
+ 331028 words of memory out of 3000000
+ 19845 multiletter control sequences out of 15000+200000
+ 541794 words of font info for 53 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,14n,72p,367b,244s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\Jan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/d
-pi600\tcrm1000.pk><D:/Programme_HDD/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx1
-0.pfb><D:/Programme_HDD/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/Pr
-ogramme_HDD/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><D:/Programme_HD
-D/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Programme_HDD/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmmi10.pfb><D:/Programme_HDD/MiKTeX/fonts/type1/pub
-lic/amsfonts/cm/cmmi7.pfb><D:/Programme_HDD/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmr10.pfb><D:/Programme_HDD/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><
-D:/Programme_HDD/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Programme
-_HDD/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/Programme_HDD/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmti10.pfb><D:/Programme_HDD/MiKTeX/fonts/type1/p
-ublic/amsfonts/symbols/msam10.pfb><D:/Programme_HDD/MiKTeX/fonts/type1/public/a
-msfonts/symbols/msbm10.pfb>
-Output written on LA.pdf (3 pages, 660364 bytes).
+ <C:\Users\Jan\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/
+ec/dpi600\tcrm1000.pk><D:/Programme_HDD/MiKTeX/fonts/type1/public/amsfonts/cmex
+tra/cmbsy7.pfb><D:/Programme_HDD/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.p
+fb><D:/Programme_HDD/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/Progr
+amme_HDD/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><D:/Programme_HDD/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><D:/Programme_HDD/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmex10.pfb><D:/Programme_HDD/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmmi10.pfb><D:/Programme_HDD/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmmi7.pfb><D:/Programme_HDD/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><
+D:/Programme_HDD/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/Programme_
+HDD/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><D:/Programme_HDD/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmr7.pfb><D:/Programme_HDD/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb><D:/Programme_HDD/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmsy7.pfb><D:/Programme_HDD/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+<D:/Programme_HDD/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><D:/Pro
+gramme_HDD/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on LA.pdf (4 pages, 689726 bytes).
 PDF statistics:
- 70 PDF objects out of 1000 (max. 8388607)
+ 89 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

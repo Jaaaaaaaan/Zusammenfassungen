@@ -145,16 +145,19 @@
 \item $f(a \oplus_{V} b) =f(a)\oplus_{V} f(b)$
 \item $f(ka)=kf(a)$
 \end{enumerate}
-\item $f(k_{1}v_{1}\oplus_{V}\dotsc \oplus_{V} k_{n}v_{n})=\underbrace{k_{1}f(v_{1})\oplus_{W}\dotsc\oplus_{W} k_{n}f(v_{n})}_{\text{LK von Vektoren aus W}}$ 
+%\item $f(k_{1}v_{1}\oplus_{V}\dotsc \oplus_{V} k_{n}v_{n})=\underbrace{k_{1}f(v_{1})\oplus_{W}\dotsc\oplus_{W} k_{n}f(v_{n})}_{\text{LK von Vektoren aus W}}$ 
 
-% line 146 evtl. rauskommentieren weil ist ja klar aber vllt. doch ganz gut nochmal zu sehen??
+% line 146 erstmal rauskommentiert weil ist eigentlich klar, und steht so ähnlich auch schon in 157
 
 \item Sei $\left\lbrace b_{1},\dotsc,b_{n}\right\rbrace$ Basis von $V.\;\;\;\;$   \textbf{f injektiv} $\Leftrightarrow \left\lbrace f(b_{1}), \dotsc,f(b_{n}) \right\rbrace $ lin. u. $\Leftrightarrow$ Ker$(f)=\left\lbrace 0_{v} \right\rbrace$
 \item \textbf{f surjektiv} $\Leftrightarrow$ Span$(\left\lbrace f(b_{1}), \dotsc,f(b_{n}) \right\rbrace)=W$
 \item \textbf{f bijektiv} $\Leftrightarrow \left\lbrace f(b_{1}), \dotsc,f(b_{n}\right\rbrace$ ist Basis von W\\ Für Beweise bzgl. dieser 3 Eigenschaften bieten sich oft Gegenbeispiele an!
 \item Ker$(f)=\left\lbrace v \mid v \in V, f(v)=0_{W}\right\rbrace$, enthält stets $0_{V};\;\;$ Im$(f)=\left\lbrace f(v) \mid v\in V\right\rbrace$, enthält stets $0_{W};$\\ beide bilden UVR von V bzw. W 
 \item \textbf{Dimensionsformel für lineare Abbildungen:} dim$(V)=n\Rightarrow\text{dim Im}(f)+\text{dim Ker}(f)=n$
-\item da $f(v)=f(k_{1}b_{1}+\dotsc + k_{n}b_{n})=k_{1}f(b_{1})+\dotsc k_{n}f(b_{n})$ gilt für $v=(v_{1}\dotsc v_{n})^{T}$
+\item $f(v)=f(k_{1}b_{1}+\dotsc + k_{n}b_{n})=k_{1}f(b_{1})+\dotsc k_{n}f(b_{n})$ (f durch Bilder der Basisvektoren eindeutig bestimmt)
+\item $\left\lbrace e_{1},\dotsc,e_{n}\right\rbrace$ Standardbasis von $K^{n},\;f: K^{n}\rightarrow K^{m}\Rightarrow f(v)=\underbrace{(f(e_{1})\dotsc f(e_{n}))}_{\text{Abbildungsmatrix A}}v$
+\item allgemeiner gilt für $f:V\rightarrow W$ mit $B=(b_{1},\dotsc,b_{n})/C$ angeordnete Basis von $V/W$: $f(v)_{C}=A_{BC}\cdot v_{B}$ mit \textbf{darstellender Matrix} $A_{BC}=(f(b_{1})_{C}\dotsc f(b_{n})_{C});\;\;\;\;\boldysmbol{f^{-1}:}\; A_{BC}^{-1}\cdot f(v)_{C}=v_{B} $ 
+\item für $f_{1}:V_{1}\rightarrow V_{2},f_{2}:V_{2}\rightarrow V_{3}$ gilt $f_{2}\circ f_{1}$ hat darstellende Matrix $A_{B_{2}B_{3}}\cdot A_{B_{1}B_{2}}$
 \end{itemize}
 \textit{einfache Beweise sind prüfungsrelevant}
 \end{document}

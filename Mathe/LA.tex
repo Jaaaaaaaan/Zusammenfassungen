@@ -155,7 +155,13 @@
 \item Ker$(f)=\left\lbrace v \mid v \in V, f(v)=0_{W}\right\rbrace$, enthält stets $0_{V};\;\;$ Im$(f)=\left\lbrace f(v) \mid v\in V\right\rbrace$, enthält stets $0_{W};$\\ beide bilden UVR von V bzw. W 
 \item \textbf{Dimensionsformel für lineare Abbildungen:} dim$(V)=n\Rightarrow\text{dim Im}(f)+\text{dim Ker}(f)=n$
 \item $f(v)=f(k_{1}b_{1}+\dotsc + k_{n}b_{n})=k_{1}f(b_{1})+\dotsc k_{n}f(b_{n})$ (f durch Bilder der Basisvektoren eindeutig bestimmt)
-\item $\left\lbrace e_{1},\dotsc,e_{n}\right\rbrace, f: K^{n}\rightarrow K^{m}\Rightarrow f(v)=$
+\item $\left\lbrace e_{1},\dotsc,e_{n}\right\rbrace$ Standardbasis von $K^{n},\;f: K^{n}\rightarrow K^{m}\Rightarrow f(v)=\underbrace{(f(e_{1})\dotsc f(e_{n}))}_{\text{Abbildungsmatrix A}}v$
+\item allgemeiner gilt für $f:V\rightarrow W$ mit $B=(b_{1},\dotsc,b_{n})/C$ angeordnete Basis von $V/W$: $f(v)_{C}=A_{BC}\cdot v_{B}$ mit \textbf{darstellender Matrix} $A_{BC}=(f(b_{1})_{C}\dotsc f(b_{n})_{C});\;\;\Rightarrow\boldsymbol{f^{-1}:}\; A_{BC}^{-1}\cdot f(v)_{C}=v_{B} $ 
+\item für $f_{1}:V_{1}\rightarrow V_{2},f_{2}:V_{2}\rightarrow V_{3}$ gilt $f_{2}\circ f_{1}$ hat darstellende Matrix $A_{B_{2}B_{3}}\cdot A_{B_{1}B_{2}}$
 \end{itemize}
 \textit{einfache Beweise sind prüfungsrelevant}
+
+
+\newpage
+\subsection{Determinanten}
 \end{document}

@@ -1,8 +1,3 @@
-%Grundsätzliches: Enthalten sind die Gebieten die Frau Baumann schon als Schwerpunkte angekündigt hat (und natürliche das nicht ausdrücklich geforderte Grundwissen auf dem sie aufbauen).
-%Das meiste ist eher knapp gehalten, extrem grundlegende Dinge wie "was ist eine Linearkombination", "wie addiert man Matrizen" etc. sind nicht nochmal erklärt weil ich denke dass das beim lernen eher stört.
-%Die wichtigen Äquivalenzen stehen am Ende um den Zusammenhang klar zu machen ohne alle 17 mal aufzuschreiben; in den anderen Abschnitten steht genug um zu erkennen woher eine bestimmte Äquivalenz jeweils kommt 
-%Selbstverständlich kannst du auch noch kürzen/ergänzen 
-
 \documentclass[10pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
@@ -127,7 +122,7 @@
 \subsection{Eigenschaften von Matrizen und LGS}
 \begin{itemize}
 
-%Begriff der affinen Teilräume hier erstmal ignoriert, sollte auch keine Rolle spielen
+%Begriff der affinen Teilräume hier erstmal ignoriert, spielt keine Rolle
 
 \item \textbf{Kern} einer Matrix Ker$(A)$ ist Lösungsmenge von $(A\mid \overrightarrow{0})$ (dem zugehörigen homogenen LGS), Ker$(A)$ ist ein VR
 \item Lösungsmengen inhomogener LGS sind keine VR; je zwei Lösungen des inhomogenen LGS unterscheiden sich um eine Lösung des homogenen LGS (=Kern der Koeffizientematrix)
@@ -148,7 +143,7 @@
 \end{enumerate}
 %\item $f(k_{1}v_{1}\oplus_{V}\dotsc \oplus_{V} k_{n}v_{n})=\underbrace{k_{1}f(v_{1})\oplus_{W}\dotsc\oplus_{W} k_{n}f(v_{n})}_{\text{LK von Vektoren aus W}}$ 
 
-% line 146 erstmal rauskommentiert weil ist eigentlich klar, und steht so ähnlich auch schon in 157
+% zeile 149 erstmal rauskommentiert weil ist eigentlich klar, und steht so ähnlich auch schon anderswo
 
 \item Sei $\left\lbrace b_{1},\dotsc,b_{n}\right\rbrace$ Basis von $V.\;\;\;\;$   \textbf{f injektiv} $\Leftrightarrow \left\lbrace f(b_{1}), \dotsc,f(b_{n}) \right\rbrace $ lin. u. $\Leftrightarrow$ Ker$(f)=\left\lbrace 0_{v} \right\rbrace$
 \item \textbf{f surjektiv} $\Leftrightarrow$ Span$(\left\lbrace f(b_{1}), \dotsc,f(b_{n}) \right\rbrace)=W$
@@ -158,30 +153,31 @@
 \item $f(v)=f(k_{1}b_{1}+\dotsc + k_{n}b_{n})=k_{1}f(b_{1})+\dotsc k_{n}f(b_{n})$ (f durch Bilder der Basisvektoren eindeutig bestimmt)
 \item $\left\lbrace e_{1},\dotsc,e_{n}\right\rbrace$ Standardbasis von $K^{n},\;f: K^{n}\rightarrow K^{m}\Rightarrow f(v)=\underbrace{(f(e_{1})\dotsc f(e_{n}))}_{\text{Abbildungsmatrix A}}v$
 \item allgemeiner gilt für $f:V\rightarrow W$ mit $B=(b_{1},\dotsc,b_{n})/C$ angeordnete Basis von $V/W$: $f(v)_{C}=A_{BC}\cdot v_{B}$ mit \textbf{darstellender Matrix} $A_{BC}=(f(b_{1})_{C}\dotsc f(b_{n})_{C});\;\;\Rightarrow\boldsymbol{f^{-1}:}\; A_{BC}^{-1}\cdot f(v)_{C}=v_{B} $ 
-\item für $f_{1}:V_{1}\rightarrow V_{2},f_{2}:V_{2}\rightarrow V_{3}$ gilt $f_{2}\circ f_{1}$ hat darstellende Matrix $A_{B_{2}B_{3}}\cdot A_{B_{1}B_{2}}$
+%\item für $f_{1}:V_{1}\rightarrow V_{2},f_{2}:V_{2}\rightarrow V_{3}$ gilt $f_{2}\circ f_{1}$ hat darstellende Matrix $A_{B_{2}B_{3}}\cdot A_{B_{1}B_{2}}$
 \end{itemize}
 \textit{einfache Beweise sind prüfungsrelevant}
 
 
 \newpage
-\subsection{Determinanten}
+\subsection{Determinante von $\boldsymbol{A\in K^{n\times n}}$}
 \begin{itemize}
-\item det$(A)$ entspricht Faktor um den sich Flächeninhalt zwischen 2 Vektoren bei $f: x\mapsto Ax$ ändert ($A_{\text{P}}=ab\cdot \text{sin}\alpha)$ 
-
-%169 evtl. entfernen
-
-\item \textbf{Adjunkte} $A_{ij}$ entsteht aus $A$ durch sreichen $i$-ter Zeile und $j$-ter Spalte entsteht
+%\item det$(A)$ entspricht Faktor um den sich Flächeninhalt zwischen 2 Vektoren bei $f: x\mapsto Ax$ ändert ($A_{\text{P}}=ab\cdot \text{sin}\alpha)$ 
+\item \textbf{Adjunkte} $A_{ij}$ entsteht aus $A$ durch streichen $i$-ter Zeile und $j$-ter Spalte 
 \item Berechnung:
 \begin{enumerate}
 \item \textbf{Regel von Sarrus} für $A\in K^{3\times 3}:$ det$(A)=\underbrace{a_{11}a_{22}a_{33}}_{\text{Hauptdiagonale}}+\underbrace{a_{12}a_{23}a_{31}}_{\text{1 daneben}}+\underbrace{a_{13}a_{21}a_{32}}_{\dotsc}$\\
 ($a_{11}a_{22}-a_{12}a_{21}$ für $2\times 2)$
 \hspace{2cm} $-\underbrace{a_{31}a_{22}a_{13}}_{\text{Nebendiagonale}}-a_{32}a_{23}a_{11}-a_{33}a_{21}a_{12}$
 \item \textbf{Entwicklungssatz:} det$(a_{11})=a_{11}, \;\; \text{det}(A)=\underbrace{\sum_{i=1}^{n}}_{\text{bzw. }j}-1^{i+j}\cdot a_{ij}\cdot \text{det}(A_{ij})\;$ (Schachbrettregel für Vorzeichen)
+\item $A$ in die Form $\begin{pmatrix} a_{11} &&0\\ \vdots&\ddots&\\a_{1n}&\dotsc&a_{nn}\end{pmatrix}$ bringen (oder Dreieck andersherum) $\Rightarrow \text{det}(A)=a_{11}\cdot \dotsc \cdot a_{nn}$ 
 \end{enumerate}
 \item Umformungsregeln:
 \begin{enumerate}
-\item
+\item $\text{det}(B)=-\text{det}(A)$ wenn B aus A durch Vertauschen Zeile/Spalte entsteht
+\item $\text{det}(B)=k\cdot \text{det}(A)$ wenn B aus A durch Multiplizieren von Zeile/Spalte mit $k\in K$ entsteht
+\item det unverändert durch addieren von Zeile/Spalte zu anderer Zeile/Spalte
 \end{enumerate}
+\item $A$ enthält Nullzeile/Nullspalte/zwei paarweise lin. a. Zeilen/Spalten $\Rightarrow \text{det}(A)=0$
 \item det$(A\cdot B)=\text{det(A)}\cdot \text{det}(B) \Rightarrow \text{det}(A^{-1})=\text{det}(A)^{-1}$
 \end{itemize}
 
@@ -200,11 +196,18 @@
 \subsection{Eigenvektorbasen und diagonalisierbare Matrizen}
 
 
+
 \subsection{Skalarprodukt und Orthogonalität in euklidischen $\mathbb{R}$-VR}
+
+
 
 \subsection{Orthogornal- und Orthonormalbasen (OGB/ONB) }
 
+
+
 \subsection{Gram-Schmidt-Verfahren und Orthogonalzerlegung}
+
+
 
 \subsection{Äquivalente Aussagen für $\boldsymbol{A\in K^{n\times n}}$}
 \begin{itemize}
@@ -218,8 +221,4 @@
 \item $\exists A^{-1}$ 
 \item $\exists (A^{T})^{-1}$
 \end{itemize}
-
-
-
-
 \end{document}

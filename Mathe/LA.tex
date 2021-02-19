@@ -221,20 +221,33 @@ k_{1}&&0\\&\ddots&\\0&&k_{n}
 %Eigenschaften Skalarprodukt möglicherweise nicht nötig aber da bin ich unsicher
 
 \item ist $V$ ein $\mathbb{R}$-VR, so ist $(V;\bullet)$ ein euklidischer $\mathbb{R}$-VR, in dem gilt \textbf{Norm} $\Vert v \Vert=\sqrt{v\bullet v}$ 
-\item cos$(\alpha)=\dfrac{u\bullet v}{\Vert u \Vert \cdot \Vert v\Vert}$ mit $\alpha\in [0,2\pi]$!!$\;\;\;\; u \bullet v=0 \Leftrightarrow u\perp v$ $\;\;\;\;v$ ist \textbf{Einheitsvektor} wenn $\Vert v \Vert=1$
+\item cos$(\alpha)=\dfrac{u\bullet v}{\Vert u \Vert \cdot \Vert v\Vert}$ mit $\alpha\in [0,2\pi]$!!$\;\;\;\; u \bullet v=0 \Leftrightarrow u\perp v$ $\;\;\;\;v$ ist \textbf{Einheitsvektor} wenn $\Vert v \Vert=v\bullet v=1$
 \item es gilt S.d.P.: $\Vert u+v\Vert^2=\Vert u\Vert^2 +\Vert v \Vert^2 \Leftrightarrow u\perp v$
 
 %Winkel und S.d.P evtl. auch nicht nötig
 
+\item für $v\in V,u\in U=\text{Span}\left\lbrace b_{1},\dotsc,b_{n}\right\rbrace$ ist $U^{\perp}=\left\lbrace v\mid u\bullet v=0_{\mathbb{R}}\right\rbrace=\text{Ker}\begin{pmatrix}
+b_{1}^{T}\\\vdots\\b_{n}^{T}
+\end{pmatrix}$ \textbf{Orthogonalraum} von $U$ in $V$
+
+%weitere Identitäten zu Orthogonalraum hier nicht enthalten da nicht gefordert; theoretisch wäre auch nichtmal Berechnung zum Verständnis nötig aber schadet vllt. auf den 2 A4 Seiten doch nicht...
+
+\item orthogonale Projektion $\hat{v}$ von $v$ in $U=\text{Span}\left\lbrace b_{1},\dotsc,b_{n}\right\rbrace: \hat{v}=\text{proj}_{U}v=\dfrac{v\bullet b_{1}}{b_{1}\bullet b_{1}}b_{1}+\dotsc+\dfrac{v\bullet b_{n}}{b_{n}\bullet b_{n}}b_{n}$ 
+\item \textbf{Satz über die Orthogonalzerlegung:} für $v\in \mathbb{R}^{n},U$ UVR von $\mathbb{R}^{n}$ gilt: $v=\hat{v}+w$ mit $\hat{v}\in U$ und $w\in U^{\perp}$
 \end{itemize}
 
 
 
-\subsection{Orthogonal- und Orthonormalbasen (OGB/ONB) }
-
-
-
-\subsection{Gram-Schmidt-Verfahren und Orthogonalzerlegung}
+\subsection{Orthogonal- und Orthonormalbasen (OGB/ONB), Gram-Schmidt-Verfahren }
+\begin{itemize}
+\item OGB ist Basis mit paarweise orthogonalen Basisvektoren, ONB ist OGB mit normierten Basisvektoren
+\item ist $\left\lbrace b_{1},\dotsc, b_{n}\right\rbrace$ OGB von $V$ und $v\in V$ dann gilt $v=\text{proj}_{V}v$
+\item Konstuktion einer OGB $\left\lbrace b_{1},\dotsc, b_{n}\right\rbrace$ von UVR $U$ des $\mathbb{R}^{n}$ (geg.: Basis $\left\lbrace u_{1} \dotsc u_{n}\right\rbrace$):
+\begin{enumerate}
+\item $b_{1}:=u_{1}$
+\item $b_{i+1}:=u_{i+1}-\text{proj}_{\text{Span}(\left\lbrace b_{1},\dotsc,b_{i}\right\rbrace)}u_{i+1}$
+\end{enumerate}
+\end{itemize}
 
 
 

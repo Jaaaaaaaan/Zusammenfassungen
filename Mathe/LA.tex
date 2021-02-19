@@ -1,5 +1,6 @@
 %Grundsätzliches: Enthalten sind die Gebieten die Frau Baumann schon als Schwerpunkte angekündigt hat (und natürliche das nicht ausdrücklich geforderte Grundwissen auf dem sie aufbauen).
 %Das meiste ist eher knapp gehalten, extrem grundlegende Dinge wie "was ist eine Linearkombination", "wie addiert man Matrizen" etc. sind nicht nochmal erklärt weil ich denke dass das beim lernen eher stört.
+%Die wichtigen Äquivalenzen stehen am Ende um den Zusammenhang klar zu machen ohne alle 17 mal aufzuschreiben; in den anderen Abschnitten steht genug um zu erkennen woher eine bestimmte Äquivalenz jeweils kommt 
 %Selbstverständlich kannst du auch noch kürzen/ergänzen 
 
 \documentclass[10pt,a4paper]{article}
@@ -42,7 +43,7 @@
 \item $A^{T}$: Zeilen und Spalten vertauschen
 \item + kommutativ mit neutralem Element Nullmatrix; $\cdot$ assoziativ mit neutralem Element Einheitsmatrix und Nullmatrix absorbiert; $\cdot$ distributiv über + 
 \item $(A+B)^{T}=A^{T}+B^{T},\; (kA)^{T}=kA^{T},\; (A^{T})^{T}=A,\; (A\cdot B)^{T})=B^{T}\cdot A^{T}$ (Reihenfolge !!)
-\item $A^{-1}$ ist zu ermitteln durch $(A\mid E_{n})\rightsquigarrow (A \text{ in ZSF} \mid E_{n}') \rightsquigarrow (E_{n} \mid A^{-1})$ mit elementaren Zeilenumformungen\\ $A$ in ZSF hat keine Nullzeile $\Leftrightarrow\text{rg}(A)= n \Leftrightarrow\text{dim Ker}(A)=0\Leftrightarrow \text{det}(A)\neq 0 \Leftrightarrow \exists A^{-1}$ 
+\item $A^{-1}$ ist zu ermitteln durch $(A\mid E_{n})\rightsquigarrow (A \text{ in ZSF} \mid E_{n}') \rightsquigarrow (E_{n} \mid A^{-1})$ mit elementaren Zeilenumformungen\\ A in ZSF hat Nullzeilen $\Leftrightarrow \nexists A^{-1};\;\;\;$ Es gilt auch $A^{-1}=\text{det}(A)^{-1}(-1^{i+j}\text{ det}(A_{ji}))$
 \item $A\in \mathbb{R}^{2\times 2} \Rightarrow A^{-1}=\text{det}(A)^{-1}\cdot \begin{pmatrix} d& -b\\ -c&a\end{pmatrix}$
 \end{itemize}
 
@@ -164,4 +165,45 @@
 
 \newpage
 \subsection{Determinanten}
+\begin{itemize}
+\item det$(A)$ entspricht Faktor um den sich Flächeninhalt zwischen 2 Vektoren bei $f: x\mapsto Ax$ ändert ($A_{\text{P}}=ab\cdot \text{sin}\alpha)$ 
+
+%169 evtl. entfernen
+
+\item \textbf{Adjunkte} $A_{ij}$ entsteht aus $A$ durch sreichen $i$-ter Zeile und $j$-ter Spalte entsteht
+\item Berechnung:
+\begin{enumerate}
+\item \textbf{Regel von Sarrus} für $A\in K^{3\times 3}:$ det$(A)=\underbrace{a_{11}a_{22}a_{33}}_{\text{Hauptdiagonale}}+\underbrace{a_{12}a_{23}a_{31}}_{\text{1 daneben}}+\underbrace{a_{13}a_{21}a_{32}}_{\dotsc}$\\
+($a_{11}a_{22}-a_{12}a_{21}$ für $2\times 2)$
+\hspace{2cm} $-\underbrace{a_{31}a_{22}a_{13}}_{\text{Nebendiagonale}}-a_{32}a_{23}a_{11}-a_{33}a_{21}a_{12}$
+\item \textbf{Entwicklungssatz:} det$(a_{11})=a_{11}, \;\; \text{det}(A)=\underbrace{\sum_{i=1}^{n}}_{\text{bzw. }j}-1^{i+j}\cdot a_{ij}\cdot \text{det}(A_{ij})\;$ (Schachbrettregel für Vorzeichen)
+\end{enumerate}
+\item det$(A\cdot B)=\text{det(A)}\cdot \text{det}(B) \Rightarrow \text{det}(A^{-1})=\text{det}(A)^{-1}$
+\end{itemize}
+
+
+
+\subsection{Eigenwerte und Eigenvektoren}
+\begin{itemize}
+\item
+\end{itemize}
+
+
+
+\subsection{Äquivalente Aussagen für $\boldsymbol{A\in K^{n\times n}}$}
+\begin{itemize}
+\item Spaltenvektoren von A sind lin. u. 
+\item Zeilenvektoren von A sind lin. u.
+\item $A$ in ZSF hat keine Nullzeilen 
+\item $\text{rg}(A)= n $
+\item $\text{Ker}(A)=\left\lbrace 0_{v}\right\rbrace$
+\item $\text{dim Ker}(A)=0$
+\item $\text{det}(A)\neq 0$
+\item $\exists A^{-1}$ 
+\item $\exists (A^{T})^{-1}$
+\end{itemize}
+
+
+
+
 \end{document}

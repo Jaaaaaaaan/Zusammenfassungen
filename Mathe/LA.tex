@@ -194,14 +194,43 @@
 
 
 \subsection{Eigenvektorbasen und diagonalisierbare Matrizen}
+\begin{itemize}
+\item Hat $K^{n}$ Basis die aus EV von $A\in K^{n\times n}$ besteht, so sprechen wir von einer Eigenvektorbasis bzgl. $A$ des $K^{n}$
+\item $A$ mit EW $k_{1},\dotsc k_{n}$ und zugehörigen EV $v_{1},\dotsc,v_{n}$ ist diagonalisierbar wenn gilt $\exists S,S^{-1}$ mit $S^{-1}\cdot A \cdot S =D$ und D Diagonalmatrix. Es gilt:
+\begin{itemize}
+\item$S=(v_{1}\dotsc v_{n})$ und $ D=\begin{pmatrix}
+k_{1}&&0\\&\ddots&\\0&&k_{n}
+\end{pmatrix}$
+\end{itemize}
+\item Äquivalente Aussagen:
+\begin{enumerate}
+\item A ist diagonalisierbar
+\item $A$ hat $n$ lin. u. EV
+\item $\exists$ Eigenvektorbasis bzgl $A$ des $K^{n}$
+\end{enumerate}
+\item \textbf{schnelles Potenzieren:} $A^{k}=(SDS^{-1})^{k}=SD^{k}S^{-1}$
+\end{itemize}
 
 
 
-\subsection{Skalarprodukt und Orthogonalität in euklidischen $\mathbb{R}$-VR}
+\subsection{Skalarprodukt $\bullet$ und Orthogonalität in euklidischen $\mathbb{R}$-VR}
+\begin{itemize}
+\item für $u,v \in \mathbb{R}^{n}$ gilt $u\bullet v=u_{1}v_{1}+\dotsc +u_{n}v_{n}=u^{T}v$; für reelle Polynome ist $p(x)\bullet q(x)=\int_{-1}^{1} p(x)q(x) dx$
+\item $\bullet$ ist \textbf{positiv definit} ($\geq 0$ für $u\bullet u$, 0 g.d.w. $u=0_{v}$), \textbf{bilinear} (distributiv über + von links und rechts; homogen von links und rechts), \textbf{symmetrisch}(=kommutativ)
+
+%Eigenschaften Skalarprodukt möglicherweise nicht nötig aber da bin ich unsicher
+
+\item ist $V$ ein $\mathbb{R}$-VR, so ist $(V;\bullet)$ ein euklidischer $\mathbb{R}$-VR, in dem gilt \textbf{Norm} $\Vert v \Vert=\sqrt{v\bullet v}$ 
+\item cos$(\alpha)=\dfrac{u\bullet v}{\Vert u \Vert \cdot \Vert v\Vert}$ mit $\alpha\in [0,2\pi]$!!$\;\;\;\; u \bullet v=0 \Leftrightarrow u\perp v$ $\;\;\;\;v$ ist \textbf{Einheitsvektor} wenn $\Vert v \Vert=1$
+\item es gilt S.d.P.: $\Vert u+v\Vert^2=\Vert u\Vert^2 +\Vert v \Vert^2 \Leftrightarrow u\perp v$
+
+%Winkel und S.d.P evtl. auch nicht nötig
+
+\end{itemize}
 
 
 
-\subsection{Orthogornal- und Orthonormalbasen (OGB/ONB) }
+\subsection{Orthogonal- und Orthonormalbasen (OGB/ONB) }
 
 
 

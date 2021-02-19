@@ -176,16 +176,23 @@
 \item \textbf{Regel von Sarrus} für $A\in K^{3\times 3}:$ det$(A)=\underbrace{a_{11}a_{22}a_{33}}_{\text{Hauptdiagonale}}+\underbrace{a_{12}a_{23}a_{31}}_{\text{1 daneben}}+\underbrace{a_{13}a_{21}a_{32}}_{\dotsc}$\\
 ($a_{11}a_{22}-a_{12}a_{21}$ für $2\times 2)$
 \hspace{2cm} $-\underbrace{a_{31}a_{22}a_{13}}_{\text{Nebendiagonale}}-a_{32}a_{23}a_{11}-a_{33}a_{21}a_{12}$
-\item \textbf{Entwicklungssatz:} det$(a_{11})=a_{11}, \;\; \text{det}(A)=\underbrace{\sum_{i=1}^{n}}_{\text{bzw. }j}-1^{i+j}\cdot a_{ij}\cdot \text{det}(A_{ij})$
+\item \textbf{Entwicklungssatz:} det$(a_{11})=a_{11}, \;\; \text{det}(A)=\underbrace{\sum_{i=1}^{n}}_{\text{bzw. }j}-1^{i+j}\cdot a_{ij}\cdot \text{det}(A_{ij})\;$ (Schachbrettregel für Vorzeichen)
+\end{enumerate}
+\item Umformungsregeln:
+\begin{enumerate}
+\item
 \end{enumerate}
 \item det$(A\cdot B)=\text{det(A)}\cdot \text{det}(B) \Rightarrow \text{det}(A^{-1})=\text{det}(A)^{-1}$
 \end{itemize}
 
 
 
-\subsection{Eigenwerte und Eigenvektoren}
+\subsection{Eigenwerte und Eigenvektoren (EW und EV)}
 \begin{itemize}
-\item
+\item $k\in K$ ist EW von $A$ wenn gilt $Av=kv$ ($\Rightarrow v$ ist EV zu $k$, dessen Richtung bei der von $A$ festgelegten linearen Abbildung nicht verändert wird), $v\in K^{n}\setminus \left\lbrace 0_{K^{n}}\right\rbrace$
+\item Berechnung von $k$ über det$(A-kE_{n})=\chi_{A}(k)=0$, mit $\chi_{A}(k)$ als \textbf{charakteristisches Polynom;} Beachte beim Rechnen eventuelle Vielfachheiten der Nullstellen von $\chi$!!; Polynome mit deg$>2$ sollten mittels  Umformungsregeln für det vermieden werden
+\item Berechnung des \textbf{Eigenraums zum EW $\boldsymbol{k}$} ( d.h. dem UVR von $K^{n}$, der genau die EV zu k \textit{und} $0_{v}$ enthält): Eig$_{k}(A)=\text{Ker}(A-kE_{n})$
+\item EV zu paarweise verschiedenen EW sind lin. u. (Beachte: durch Vielfachheiten können mehrere EV zu gleichen EW gehören)
 \end{itemize}
 
 

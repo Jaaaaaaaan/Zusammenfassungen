@@ -23,13 +23,27 @@
 \item $\begin{pmatrix} n\\ k\end{pmatrix}=\dfrac{n!}{k!(n-k)!}$
 \item \textbf{Handschlaglemma:} Anzahl der Teilnehmer einer Konferenz, die einer ungeraden Anzahl von Teilnehmern die Hand geben, ist immer gerade
 
-%genauer siehe Graphentheorie, ich hab versucht da eine Form zu finden die man sich besser merken kann aber das scheint tatsächlich nur in der Graphentheorie eine größere Rolle zu spielen
+%genauer siehe Graphentheorie, ich hab versucht da eine Form zu finden die man sich besser merken kann aber das scheint tatsächlich nur in der Graphentheorie eine größere Rolle zu spielen; daher zeile evtl. noch zu streichen 
 
 \end{itemize}
 
 
 
 \subsection{Abbildungen}
+\begin{itemize}
+\item für $f: A\rightarrow B, A'\subseteq A$ heißt $f[A']=\left\lbrace f(a)\mid a \in A'\right\rbrace$ Bild von $A'$ unter $f$
+\item \textbf{injektiv:} $f(a_{1})=f(a_{2}) \Rightarrow a_{1}=a_{2}$ ("für jedes $b\in B$ existiert höchstens ein $a\in A$ mit $f(a)=b$")\\
+Beweise über Gegenbeispiel oder $f(a_{1})=f(a_{2})$ setzen 
+\item \textbf{surjektiv:} $f[A]=B$ ("für jedes $b\in B$ existiert mindestens ein $a\in A$ mit $f(a)=b$")\\ Beweise über Gegenbeispiel oder Definitionsbereich der Umkehrfunktion untersuchen 
+\item \textbf{bijektiv:} injektiv und surjektiv ("für jedes $b\in B $ existiert genau ein $a\in A$ mit $f(a)=B$")
+\item für $f$ \textit{injektiv (!!)}  definieren wir $\boldsymbol{f^{-1}: }f[A]\rightarrow A, b\mapsto f^{-1}(b)=a$ mit $f^{-1}(b)=a$  g.d.w. $f(a)=b$
+\item für $f:A\rightarrow B, g: B\rightarrow C$ ist \textbf{Komposition} $ g\circ f:A\rightarrow C, x \mapsto g(f(x))$ ($\Rightarrow$ von rechts nach links ausführen!!)
+\item \textbf{Permutation} von $X$ ist bijektive Abbildung von $X$ nach $X$, für $X=\left\lbrace 1,\dotsc, n\right\rbrace$ ist $S_{n}$ Menge aller Permutationen und $\pi \in S_{n}$ mit $\pi=\begin{pmatrix}1&\dotsc& n\\ \pi(1)&\dotsc &\pi(n)\end{pmatrix} $ und $\vert S_{n}\vert =n!$
+\end{itemize}
+
+
+
+
 
 
 
@@ -48,7 +62,7 @@ Die Aussage $A_{n}$ sei $\sum_{k=0}^{n} q^{k}= \dfrac{1-q^{n+1}}{1-q}$ mit $n \i
 \item alles nochmal mit (n+1)+1 hinschreiben ist nicht nötig
 \item Varianten: $A_{n} \Rightarrow A_{n+1}$/ aus $A_{n}$ folgt $A_{n+1}$ für alle $n\in \mathbb{N}$\\
  w.A. /Folglich gilt $A_{n}$ für alle $n \in \mathbb{N}, n \geq n_{0}$
-\item Bedenke dass z.T. auch nur für $n \in \mathbb{N}, n\geq k$ bewiesen wird (kein $\tilde{n}$)!! und $n_{0}=0$ nicht immer gelten muss
+\item Beachte dass oft auch nur für $n \in \mathbb{N}, n\geq k$ bewiesen wird (kein $\tilde{n}$)!! und $n_{0}=0$ nicht immer gelten muss
 \end{itemize}
 
 
@@ -59,6 +73,31 @@ Die Aussage $A_{n}$ sei $\sum_{k=0}^{n} q^{k}= \dfrac{1-q^{n+1}}{1-q}$ mit $n \i
 
 
 \subsection{Zahlentheorie}
+\begin{itemize}
+\item $n\in \mathbb{N}, n\geq 1$ kann \textit{eindeutig} geschrieben werden als $n=\prod_{i=1}^{k} p_{i}^{\alpha_{i}}$ mit $p_{i}$ prim, $\alpha_{i} \in \mathbb{N}$
+\item für $a,b \in \mathbb{N}$ gilt $a\mid b \Leftrightarrow \exists k : ak=b;\;\;\; a\mid b_{1}\land a\mid b_{2} \Rightarrow a\mid (b_{1}+b_{2}) \land a\mid (b_{1}-b_{2})$
+\item $\text{ggT}(0,0)=0;\;\;\;\text{kgV}(m,0)=\text{kgV}(0,n)=0;\;\;\;\text{ggT}(m,n)\cdot \text{kgV}(m,n)=m\cdot n$
+\item \textbf{Euklidischer Algorithmus} (EA, keine offizielle Abkürzung):
+\item \textbf{Erweiterter Euklidischer Algorithmus} (EEA, keine offizielle Abkürzung): 
+\end{itemize}
+
+
+\subsection{Kryptographie}
+\begin{itemize}
+\item \textbf{diskreter Logarithmus:} 
+\item \textbf{Diffie-Hellman-Merkle:}
+\item \textbf{RSA:}
+\begin{enumerate}
+\item Bob wählt zufällig 2 Primzahlen $p,q$ und berechnet $n:=pq$
+\item Bob wählt zufällig $d\in \mathbb{Z}_{\phi(n)}^{*}$ und berechnet $i,h\in \mathbb{Z}$ mit $ i\cdot d+h\cdot \phi(n)=\text{ggT}(d,\phi(n))=1$ (EEA)
+
+%prüfen ob dieser Punk tatsächlich korrekt 
+
+\item $n$ und $i$ sind öffentliche Schlüssel und werden an Alice weitergegeben, $d$ ist privater Schlüssel
+\item Alice schickt $c=m^{i} \text{ mod } n$ an Bob mit Nachricht $m$ ($0\leq m <n$) 
+\item Bob berechnet $m=c^{d} \text{ mod } n$ (Potenzieren mit Al Kashi oder Euler-Fermat oder Zahl zerlegen)
+\end{enumerate}
+\end{itemize}
 
 
 
@@ -76,4 +115,5 @@ Die Aussage $A_{n}$ sei $\sum_{k=0}^{n} q^{k}= \dfrac{1-q^{n+1}}{1-q}$ mit $n \i
 
 
 \subsection{Relationen}
+%beachte hier evtl auch Grundlagen aus VL 1
 \end{document}

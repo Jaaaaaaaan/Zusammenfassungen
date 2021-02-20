@@ -80,25 +80,75 @@ Die Aussage $A_{n}$ sei $\sum_{k=0}^{n} q^{k}= \dfrac{1-q^{n+1}}{1-q}$ mit $n \i
 \item für $m,n \in \mathbb{Z}$ mit $n>0$ gilt $\exists q,r:( q,r \in \mathbb{Z}\land m=nq+r\land 0\leq r<n)$\\ $m \text{ mod } n:=r,\;\;$
 für $a \text{ mod } n =b \text{ mod } n$ schreibe $a \equiv b \text{ mod } n$
 \item \textbf{Homomorphieregel:} $(a \text{ mod } n+b \text{ mod } n) \text{ mod } n=(a+b) \text{ mod } n\;\;\;\;\;$ (analog für $\cdot\;$)
-\item $\text{ggT}(0,0)=0;\;\;\;\text{kgV}(m,0)=\text{kgV}(0,n)=0;\;\;\;\text{ggT}(m,n)\cdot \text{kgV}(m,n)=m\cdot n;\;\;\; m,n$ teilerfremd für ggT$(m,n)=1$
-\item \textbf{Euklidischer Algorithmus} (EA, keine offizielle Abkürzung):
-\item \textbf{Erweiterter Euklidischer Algorithmus} (EEA, keine offizielle Abkürzung): 
-\item \textbf{Lemma von Bézout}
-\item \textbf{Al Kashi's Trick}
-\item \textbf{chinesischer Restsatz}
+\item $\text{kgV}(m,0)=\text{kgV}(0,n)=0;\;\text{ggT}(m,n)\cdot \text{kgV}(m,n)=m\cdot n\;(\Rightarrow$ kgV mit Euklid berechenbar) 
+\item \textbf{Euklidischer Algorithmus:}
+immer weiter ggT$(m,n)=\text{ggT}(n \text{ mod } m,m)$ berechnen; $\;\text{ggT}(m,n)=m$ falls $m\mid n;\;\; \text{ggT}(0,n)=n;\;\; m,n \text{ teilerfremd }  \Leftrightarrow \text{ggT}(m,n)=1$
+\item \textbf{Lemma von Bézout:} $m,n \in \mathbb{N} \Rightarrow \exists a,b :a,b\in \mathbb{Z}\land \text{ggT}(m,n)=am+bn$
+\item \textbf{Erweiterter Euklidischer Algorithmus} am Beispiel ("EEA", keine offizielle Abkürzung): \\
+\end{itemize}
+\begin{tabular}{ c | c c | c }
+   & $\underbrace{1008}_{m}$ & $\underbrace{499}_{n}$ & $-q_{i}$ \\ 
+ \hline
+ 1008 & 1 & 0 & \\  
+ 499 & 0 & 1 &  \\  
+$1008 \text{ mod } 499 =10$ & 1 & $0+1\cdot(-q_{i})=-2$ & $1008=499\cdot 2+10\Rightarrow -q_{i}=-2$\\
+$499 \text{ mod } 10 =9$ & -49 & $1+(-2)(-q_{i})=99$ & -49  \\
+$10 \text{ mod } 9 =1$ & 50 & $-2+99(-q_{i})=-101$ & -1 \\
+$9 \text{ mod } 1 =0$&&&
+\end{tabular} 
+\hspace{0.1cm} $\Rightarrow$\hspace{0.2cm}
+\begin{tabular}{ c | c c | c }
+   & 1008 & 499 & $-q_{i}$ \\ 
+ \hline
+ 1008 & 1 & 0 & \\  
+ 499 & 0 & 1 &  \\  
+ 10 & 1 & -2 & -2\\
+ 9 & -49 & 99 & -49  \\
+ 1 & 50 & -101 & -1 \\
+\end{tabular} \\\\
+in $m$ Spalte wird analog zu $n$ Spalte gerechnet, das ganze bis in der linken Spalte 0 stehen würde \\\\
+$\Rightarrow \text{ggT}(1008,499)=1=50\cdot 1008 -101\cdot 499\;\;\;\;\;$ (Bézout Koeffizienten $a=50, b=-101$)
+\begin{itemize}
+\item \textbf{chinesischer Restsatz:} Seien $0<n_{1},\dotsc ,n_{k}\in \mathbb{N}$ teilerfremd und seien $a_{1},\dotsc ,a_{k} \in \mathbb{Z}$. Dann existiert genau ein $x\in \left\lbrace 0,1,\dotsc,\prod_{i=1}^{k} n_{i}-1\right\rbrace$ mit $x\equiv a_{i} \text{ mod } n_{i}$ für alle $i=1,\dotsc, k$
+\item für $k=2:$ Seien $0<m,n\in \mathbb{N}$ teilerfremd und seien $a_{1},a_{2} \in \mathbb{N}$. Dann existiert genau ein $x\in \left\lbrace 0,1,\dotsc,mn-1\right\rbrace$ mit $x\equiv a_{1} \text{ mod } m \land x\equiv a_{2} \text{ mod } n;\;$ anschaulich heißt das, dass ein $m\times n$ Spielbrett eindeutig wie in VL durchnummeriert werden kann wenn $\text{ggT}(m,n)=1$
+
+%warum $a_{1},a_{2} \in \mathbb{N}$, nicht $\mathbb{Z}$??
 
 \end{itemize}
 
 
 
+
 \subsection{Gruppentheorie}
+\begin{itemize}
+\item für Beweise bieten sich oft Multiplikations-/Additionstabellen an
+\end{itemize}
+
+
+
+\subsection{Potenzieren mod $\boldsymbol{n}$}
+\begin{itemize}
+\item \textbf{Al Kashi's Trick}
+\item Euler-Fermat
+\item Zerlegung
+\end{itemize}
 
 
 
 \subsection{Kryptographie}
 \begin{itemize}
-\item \textbf{diskreter Logarithmus:} 
+\item für $p$ prim und $g$ Primitivwurzel von $\mathbb{Z}_{p}^{*}$ ist der \textbf{diskrete Logarithmus} von $x \in \mathbb{Z}_{p}^{*}$ zur Basis $g$ die Zahl $m\in \left\lbrace 0,\dotsc,p-2\right\rbrace$ mit  $g^{m}\equiv x \text{ mod } p\;\;\; (m=\text{log}_{g}(x))$; $m$ kann nicht effizient berechnet werden, $x$ aus $g^{m}$ schon
 \item \textbf{Diffie-Hellman-Merkle:}
+\begin{enumerate}
+\item Alice und Bob einigen sich auf Primzahl $p$ und Primitivwurzel $g$ von $\mathbb{Z}_{p}^{*}$
+\item Alice wählt geheime Zufallszahl $a$ und berechnet $a'=g^{a} \text{ mod } p$; Bob analog: $b'=g^{b} \text{ mod } p$
+\item beide teilen sich $a'$ und $b'$ mit und berechnen das Geheimnis $c=g^{ab} \text{ mod } p=(a')^{b} \text{ mod } p=(b')^{a} \text{ mod } p$
+\end{enumerate}
+Um damit Nachricht $m\leq c$ zu verschlüsseln:
+\begin{enumerate}
+\item  schreibe $m$ und $c$ binär als $m=m_{1}\dotsc m_{l},c=c_{1}\dotsc c_{k}$
+\item Alice verschickt $v_{1}=m_{1}+c_{1} \text{ mod } 2,\dotsc,v_{l}=m_{l}+c_{l} \text{ mod } 2$; Bob berechnet $m_{i}=v_{i}+c_{i} \text{ mod } 2$
+\end{enumerate}
 \item \textbf{RSA:}
 \begin{enumerate}
 \item Bob wählt zufällig 2 Primzahlen $p,q$ und berechnet $n:=pq$
@@ -108,7 +158,7 @@ für $a \text{ mod } n =b \text{ mod } n$ schreibe $a \equiv b \text{ mod } n$
 
 \item $n$ und $i$ sind öffentliche Schlüssel und werden an Alice weitergegeben, $d$ ist privater Schlüssel
 \item Alice schickt $c=m^{i} \text{ mod } n$ an Bob mit Nachricht $m$ ($0\leq m <n$) 
-\item Bob berechnet $m=c^{d} \text{ mod } n$ (Potenzieren mit Al Kashi oder Euler-Fermat oder Zahl zerlegen)
+\item Bob berechnet $m=c^{d} \text{ mod } n$ 
 \end{enumerate}
 \end{itemize}
 

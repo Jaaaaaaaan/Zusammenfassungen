@@ -16,9 +16,9 @@
 \subsection{Mengenlehre und Kombinatorik}
 \begin{itemize}
 \item zwei Mengen $A$ und $B$ sind gleich wenn sie die selben Elemente haben, d.h. wenn $A \subseteq B \land B \subseteq A$
-\item Beachte z.B. dass $\left\lbrace\left\lbrace 1,2\right\rbrace 7\right\rbrace \nsubseteq \mathbb{N}$
-\item Schnitt und Vereinigung sind kommutativ, assoziativ, distributiv in beide Richtungen; für Beweise kann es nützlich sein sich die Definitionen dieser Operationen in Erinnerung zu rufen, $\overline{A\cup B}=\overline{A}\cap \overline{B}, \overline{A\cap B}=\overline{A}\cup \overline{B}$
-\item $A\times B=\left\lbrace (a,b)\mid a\in A \land b\in B\right\rbrace$ heißt \textbf{kartesisches Produkt} oder \textbf{Produktmenge},  $\vert A\times B\vert =\vert A\vert \cdot \vert B\vert$
+\item Beachte z.B. dass $\left\lbrace\left\lbrace 1,2\right\rbrace, 7\right\rbrace \nsubseteq \mathbb{N}$
+\item Schnitt und Vereinigung sind kommutativ, assoziativ, distributiv in beide Richtungen; für Beweise kann es nützlich sein sich die Definitionen dieser Operationen in Erinnerung zu rufen; $\overline{A\cup B}=\overline{A}\cap \overline{B}, \overline{A\cap B}=\overline{A}\cup \overline{B}$
+\item $A\times B=\left\lbrace (a,b)\mid a\in A \land b\in B\right\rbrace$ heißt \textbf{kartesisches Produkt} oder \textbf{Produktmenge};  $\vert A\times B\vert =\vert A\vert \cdot \vert B\vert$
 \item \textbf{Potenzmenge} $\mathcal{P}(A)$ ist die Menge aller (auch unechten) Teilmengen von $A$, $\vert \mathcal{P}(A)\vert =2^{\vert A\vert}$, es gilt stets $\emptyset \in \mathcal{P}(A)$
 \item $\begin{pmatrix} n\\ k\end{pmatrix}=\dfrac{n!}{k!(n-k)!}$
 \item \textbf{Handschlaglemma:} Anzahl der Teilnehmer einer Konferenz, die einer ungeraden Anzahl von Teilnehmern die Hand geben, ist immer gerade
@@ -38,12 +38,18 @@ Beweise über Gegenbeispiel oder $f(a_{1})=f(a_{2})$ setzen
 \item \textbf{bijektiv:} injektiv und surjektiv ("für jedes $b\in B $ existiert genau ein $a\in A$ mit $f(a)=B$")
 \item für $f$ \textit{injektiv (!!)}  definieren wir $\boldsymbol{f^{-1}: }f[A]\rightarrow A, b\mapsto f^{-1}(b)=a$ mit $f^{-1}(b)=a$  g.d.w. $f(a)=b$
 \item für $f:A\rightarrow B, g: B\rightarrow C$ ist \textbf{Komposition} $ g\circ f:A\rightarrow C, x \mapsto g(f(x))$ ($\Rightarrow$ von rechts nach links ausführen!!)
-\item \textbf{Permutation} von $X$ ist bijektive Abbildung von $X$ nach $X$, für $X=\left\lbrace 1,\dotsc, n\right\rbrace$ ist $S_{n}$ Menge aller Permutationen und $\pi \in S_{n}$ mit $\pi=\begin{pmatrix}1&\dotsc& n\\ \pi(1)&\dotsc &\pi(n)\end{pmatrix} $ und $\vert S_{n}\vert =n!$
 \end{itemize}
 
 
 
-
+\subsection{Permutationen}
+\begin{itemize}
+\item \textbf{Permutation} von $X$ ist bijektive Abbildung von $X$ nach $X$, für $X=\left\lbrace 1,\dotsc, n\right\rbrace$ ist $S_{n}$ Menge aller Permutationen und $\pi \in S_{n}$ mit $\pi=\begin{pmatrix}1&\dotsc& n\\ \pi(1)&\dotsc &\pi(n)\end{pmatrix} $ und $\vert S_{n}\vert =n!$
+\item \textbf{k-Zyklus} = k-Tupel der Form $(a_{1},\dotsc,a_{k})$ mit $\pi(a_{k})=a_{1}, \pi(a_{i})=a_{i+1}$, jedes Element von $S_{n}$ kann als Komposition elementfremder Zyklen notiert werden: $\begin{pmatrix}1&2& 3&4&5\\ 2&3&1&5&4\end{pmatrix}=(1,2,3)\circ (4,5)=(123)(45)$
+\item bei elementfremden Zyklen ist Reihenfolge egal: $(123)(45)=(45)(123)$; Elemente die auf sich selbst abgebildet werden heißen \textbf{Fixpunkte} und müssen nicht notiert werden: $(123)(4)=(123)$; mit welchem Element im Zyklus angefangen wird ist Egal: $(123)(45)=(312)(54)$ 
+\item \textbf{Transposition} = 2-Zyklus, jedes Element von $S_{n}$ kann mit Transpositionen geschrieben werden als:\\ $(a_{1},\dotsc, a_{k})=(a_{1}a_{2})(a_{2}a_{3})\dotsc(a_{k-1}a_{k})$ (nicht elementfremd $\Rightarrow$ Reihenfolge wichtig!!)
+\item bei Komposition von Permutationen für jede Zahl von rechts nach links durchgehen: $\underbrace{(123)}_{\text{\textit{(2)}}}\underbrace{(35)}_{\text{\textit{(1)}}}=\underbrace{(1235)}_{\text{\textit{(3)}}}$\\5 wird in \textit{(1)} auf 3 abgebildet, in \textit{(2)} wird 3 auf 1 abgebildet, also $5\rightarrow 3 \rightarrow 1$ und damit $5\rightarrow 1$  in \textit{(3)} 
+\end{itemize}
 
 
 
@@ -67,19 +73,26 @@ Die Aussage $A_{n}$ sei $\sum_{k=0}^{n} q^{k}= \dfrac{1-q^{n+1}}{1-q}$ mit $n \i
 
 
 
-
-
-
-
-
 \subsection{Zahlentheorie}
 \begin{itemize}
-\item $n\in \mathbb{N}, n\geq 1$ kann \textit{eindeutig} geschrieben werden als $n=\prod_{i=1}^{k} p_{i}^{\alpha_{i}}$ mit $p_{i}$ prim, $\alpha_{i} \in \mathbb{N}$
-\item für $a,b \in \mathbb{N}$ gilt $a\mid b \Leftrightarrow \exists k : ak=b;\;\;\; a\mid b_{1}\land a\mid b_{2} \Rightarrow a\mid (b_{1}+b_{2}) \land a\mid (b_{1}-b_{2})$
-\item $\text{ggT}(0,0)=0;\;\;\;\text{kgV}(m,0)=\text{kgV}(0,n)=0;\;\;\;\text{ggT}(m,n)\cdot \text{kgV}(m,n)=m\cdot n$
+\item $n\in \mathbb{N}, n\geq 1$ kann \textit{eindeutig} geschrieben werden als $n=\prod_{i=1}^{k} p_{i}^{\alpha_{i}}$ mit $p_{i}$ prim, $\alpha_{i} \in \mathbb{N}\Rightarrow\#\text{Teiler}=\prod_{i} (\alpha_{i}+1)$
+\item für $a,b \in \mathbb{N}$ gilt $a\mid b \Leftrightarrow \exists k :k\in\mathbb{N}\land  ak=b;\;\;\; a\mid b_{1}\land a\mid b_{2} \Rightarrow a\mid (b_{1}+b_{2}) \land a\mid (b_{1}-b_{2})$
+\item für $m,n \in \mathbb{Z}$ mit $n>0$ gilt $\exists q,r:( q,r \in \mathbb{Z}\land m=nq+r\land 0\leq r<n)$\\ $m \text{ mod } n:=r,\;\;$
+für $a \text{ mod } n =b \text{ mod } n$ schreibe $a \equiv b \text{ mod } n$
+\item \textbf{Homomorphieregel:} $(a \text{ mod } n+b \text{ mod } n) \text{ mod } n=(a+b) \text{ mod } n\;\;\;\;\;$ (analog für $\cdot\;$)
+\item $\text{ggT}(0,0)=0;\;\;\;\text{kgV}(m,0)=\text{kgV}(0,n)=0;\;\;\;\text{ggT}(m,n)\cdot \text{kgV}(m,n)=m\cdot n;\;\;\; m,n$ teilerfremd für ggT$(m,n)=1$
 \item \textbf{Euklidischer Algorithmus} (EA, keine offizielle Abkürzung):
 \item \textbf{Erweiterter Euklidischer Algorithmus} (EEA, keine offizielle Abkürzung): 
+\item \textbf{Lemma von Bézout}
+\item \textbf{Al Kashi's Trick}
+\item \textbf{chinesischer Restsatz}
+
 \end{itemize}
+
+
+
+\subsection{Gruppentheorie}
+
 
 
 \subsection{Kryptographie}
@@ -100,13 +113,11 @@ Die Aussage $A_{n}$ sei $\sum_{k=0}^{n} q^{k}= \dfrac{1-q^{n+1}}{1-q}$ mit $n \i
 \end{itemize}
 
 
-
-\subsection{Gruppentheorie}
-
+\subsection{Ungerichtete Graphen}
 
 
-\subsection{Graphentheorie}
 
+\subsection{Gerichtete Graphen}
 
 
 
@@ -115,5 +126,5 @@ Die Aussage $A_{n}$ sei $\sum_{k=0}^{n} q^{k}= \dfrac{1-q^{n+1}}{1-q}$ mit $n \i
 
 
 \subsection{Relationen}
-%beachte hier evtl auch Grundlagen aus VL 1
+%beachte hier evtl auch Grundlagen aus VL 1 und VL3
 \end{document}

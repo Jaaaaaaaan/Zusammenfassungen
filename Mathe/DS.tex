@@ -75,7 +75,7 @@ Die Aussage $A_{n}$ sei $\sum_{k=0}^{n} q^{k}= \dfrac{1-q^{n+1}}{1-q}$ mit $n \i
 
 \subsection{Zahlentheorie}
 \begin{itemize}
-\item $n\in \mathbb{N}, n\geq 1$ kann \textit{eindeutig} geschrieben werden als $n=\prod_{i=1}^{k} p_{i}^{\alpha_{i}}$ mit $p_{i}$ prim, $\alpha_{i} \in \mathbb{N}\Rightarrow\#\text{Teiler}=\prod_{i} (\alpha_{i}+1)$
+\item $n\in \mathbb{N}, n\geq 1$ kann \textit{eindeutig} geschrieben werden als $n=\prod_{i=1}^{k} p_{i}^{\alpha_{i}}$ ($p_{i}$ prim, $\alpha_{i} \in \mathbb{N},$ "PFZ")\\ $\Rightarrow\#\text{Teiler von }n=\prod_{i} (\alpha_{i}+1)$
 \item für $a,b \in \mathbb{N}$ gilt $a\mid b \Leftrightarrow \exists k :k\in\mathbb{N}\land  ak=b;\;\;\; a\mid b_{1}\land a\mid b_{2} \Rightarrow a\mid (b_{1}+b_{2}) \land a\mid (b_{1}-b_{2})$
 \item für $m,n \in \mathbb{Z}$ mit $n>0$ gilt $\exists q,r:( q,r \in \mathbb{Z}\land m=nq+r\land 0\leq r<n)$\\ $m \text{ mod } n:=r,\;\;$
 für $a \text{ mod } n =b \text{ mod } n$ schreibe $a \equiv b \text{ mod } n$
@@ -121,16 +121,28 @@ $\Rightarrow \text{ggT}(1008,499)=1=50\cdot 1008 -101\cdot 499\;\;\;\;\;$ (Bézo
 
 \subsection{Gruppentheorie}
 \begin{itemize}
+\item Gruppe $(G,\circ)$ (auch $(G;\circ,^{-1},e)$; dann Definition einfach anders formulieren) besteht aus Menge $G$ und innerer Verknüpfung $\circ:G\times G\rightarrow G$ so dass: $\circ$ assoziativ, es existiert  \textbf{neutrales Element} $e$ ($a\circ e=a=e\circ a$ für alle $a\in G$), es existiert \textbf{Inverses} $a^{-1}$ zu jedem $a\in G$ ($a\circ a^{-1}=e=a^{-1}\circ a$)
+\item Gruppe heißt \textbf{abelsch}/kommutativ, falls $\circ$ kommutativ ist
+\item $\mathbb{Z}_{n}=\left\lbrace 0,\dotsc,n-1\right\rbrace $ bildet mit Addition mod $n$ eine Gruppe; Symmetrien eines Quadrates ("$D_4"/"D_{8}"$)/Dreiecks etc. bilden ebenfalls eine Gruppe (Komposition führt zu Drehungen, Spiegelungen und Identitätsabbildung)
+\item \textbf{Nullteiler} mod $n$ sind $a\in \mathbb{Z}_{n}\setminus \left\lbrace 0\right\rbrace$ für die $b\in \mathbb{Z}_{n}\setminus \left\lbrace 0\right\rbrace$ existiert mit $a\cdot b\equiv 0 \text{ mod } n$\\
+\textbf{Einheiten} mod $n$ sind $a\in \mathbb{Z}_{n}$ für die $b\in \mathbb{Z}_{n}$ existiert mit $a\cdot b\equiv 1 \text{ mod } n$; 1 ist immer eine Einheit\\
+m ist Einheit mod $n\Leftrightarrow$ m ist kein Nullteiler mod $n\Leftrightarrow$ ggT$(m,n)=1$
+\item Die Menge der Einheiten mod $n$ heißt $\mathbb{Z}_{n}^{*}$ und bildet eine Gruppe mit Multiplikation mod $n$; es gilt mit PFZ dass $\phi(n):=\vert \mathbb{Z}_{n}^{*}\vert=\prod_{i=1}^{k}(p_{i}^{\alpha_{i}}-p_{i}^{\alpha_{i}-1})=\# \text{ zu } n \text{ teilerfremde Zahlen}$
+\item multiplikative Gruppe ist \textbf{zyklisch} falls $g\in G$ existiert mit $G=\left\lbrace g^{j}\mid j \in \mathbb{Z}\right\rbrace$ (Potenzrechengesetze ähnlich wie in $\mathbb{N}$, für additive Gruppen schreibe $G=\left\lbrace jg\mid j \in \mathbb{Z}\right\rbrace$); Erzeuger sind $g\in G,\vert G\vert =n$ so dass $G=\left\lbrace g^{j}\mid j \in \mathbb{Z}_{n}\right\rbrace;$\\
+Erzeuger von $\mathbb{Z}_{n}$ sind genau die Elemente von $\mathbb{Z}_{n}^{*}\Rightarrow$ \# Erzeuger$=\phi(n)$ 
+\item für $p$ prim ist $(\mathbb{Z}_{p}^{*}, \cdot \text{ mod } n$) zyklisch; \# Erzeuger$=\phi(p-1)$; diese Erzeuger heißen \textbf{Primitivwurzeln}
+\item Isomorph=Strukturgleich ("man kann Elemente einfach umbenennen"), jede zyklische Gruppe ist isomorph entweder zu $(\mathbb{Z},+)$ oder einem $(\mathbb{Z}_{n},+ \text{ mod } n)$; als Beweis das zwei Gruppen nicht isomorph sind genügt z.B. "$G_{1}$ ist zyklisch, $G_{2}$ nicht "
 \item für Beweise bieten sich oft Multiplikations-/Additionstabellen an
 \end{itemize}
 
 
 
-\subsection{Potenzieren mod $\boldsymbol{n}$}
+\subsection{Effizient rechnen mod $\boldsymbol{n}$}
 \begin{itemize}
 \item \textbf{Al Kashi's Trick}
 \item Euler-Fermat
 \item Zerlegung
+\item Verknüpfungstafeln?
 \end{itemize}
 
 
@@ -172,7 +184,7 @@ Um damit Nachricht $m\leq c$ zu verschlüsseln:
 
 
 \subsection{Aussagenlogik}
-
+%Kontraposition siehe VL 6
 
 
 \subsection{Relationen}

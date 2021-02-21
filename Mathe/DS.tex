@@ -131,18 +131,24 @@ m ist Einheit mod $n\Leftrightarrow$ m ist kein Nullteiler mod $n\Leftrightarrow
 \item multiplikative Gruppe ist \textbf{zyklisch} falls $g\in G$ existiert mit $G=\left\lbrace g^{j}\mid j \in \mathbb{Z}\right\rbrace$ (Potenzrechengesetze ähnlich wie in $\mathbb{N}$, für additive Gruppen schreibe $G=\left\lbrace jg\mid j \in \mathbb{Z}\right\rbrace$); Erzeuger sind $g\in G,\vert G\vert =n$ so dass $G=\left\lbrace g^{j}\mid j \in \mathbb{Z}_{n}\right\rbrace;$\\
 Erzeuger von $\mathbb{Z}_{n}$ sind genau die Elemente von $\mathbb{Z}_{n}^{*}\Rightarrow$ \# Erzeuger$=\phi(n)$ 
 \item für $p$ prim ist $(\mathbb{Z}_{p}^{*}, \cdot \text{ mod } n$) zyklisch; \# Erzeuger$=\phi(p-1)$; diese Erzeuger heißen \textbf{Primitivwurzeln}
-\item Isomorph=Strukturgleich ("man kann Elemente einfach umbenennen"), jede zyklische Gruppe ist isomorph entweder zu $(\mathbb{Z},+)$ oder einem $(\mathbb{Z}_{n},+ \text{ mod } n)$; als Beweis das zwei Gruppen nicht isomorph sind genügt z.B. "$G_{1}$ ist zyklisch, $G_{2}$ nicht "
-\item für Beweise bieten sich oft Multiplikations-/Additionstabellen an
+\item \textbf{Isomorph}=Strukturgleich ("man kann Elemente einfach umbenennen"), jede zyklische Gruppe ist isomorph entweder zu $(\mathbb{Z},+)$ oder einem $(\mathbb{Z}_{n},+ \text{ mod } n)$; als Beweis das zwei Gruppen nicht isomorph sind genügt z.B. "$G_{1}$ ist zyklisch, $G_{2}$ nicht "
+\item $U\subseteq G$ heißt \textbf{Untergruppe} von $G$ falls $e\in U;\;\; a\circ b \in U \text { für alle } a,b\in U;\;\; a^{-1} \in U \text{ für alle } a \in U$ 
+\item $\langle g \rangle:=\left\lbrace g^{i}\mid i \in \mathbb{Z}\right\rbrace$ ist \textbf{von $\boldsymbol{g}$ erzeugte Untergruppe}
+\item $g \circ U=\left\lbrace g\circ u \mid u \in U \right\rbrace$ ist eine \textbf{(Links-)Nebenklasse} ("LNK") von $U,\; \vert g\circ U\vert =\vert U\vert$, 2 LNK sind entweder gleich oder disjunkt $\Rightarrow$ jedes $g\in G$ liegt in genau einer LNK (nämlich $g\circ U$)
+\item \textbf{Satz von Lagrange:} $\vert G \vert = \vert G : U \vert \cdot \vert U \vert\;\;\;\;$  ( $\vert G : U \vert=\#$ LNK von $U$ in $G$=Index von $U$ in $G$)\\ $\vert G \vert$ heißt Ordnung von $G$, o$(g):=\vert \langle g\rangle \vert$ Ordnung von $g$
+\item \textbf{Satz von Euler-Fermat:} Seien $n\in \mathbb{N}, a\in \mathbb{Z}$ mit ggT$(a,n)=1$. Dann gilt $a^{\phi(n)}\equiv 1 \text{ mod } n$
+\item für Beweise bieten sich oft Verknüpfungstafeln an, folgende Methoden helfen beim effizient rechnen:
 \end{itemize}
 
 
 
-\subsection{Effizient rechnen mod $\boldsymbol{n}$}
+\subsection{Effizient potenzieren mod $\boldsymbol{n}$}
 \begin{itemize}
-\item \textbf{Al Kashi's Trick}
-\item Euler-Fermat
-\item Zerlegung
-\item Verknüpfungstafeln?
+
+% al kashi würde ich nicht mitnehmen weil sehr umständlich und nicht ausdrücklich gefordert und wenn euler fermat nicht geht ist man mit zerlegen doch am ende genau so schnell
+
+\item andere Form von Euler-Fermat: $a^{m} \equiv a^{m \text { mod } \phi (n)} \text{ mod n}$, gilt aber auch nur für ggT$(a,n)=1$ !!
+\item einfach die Zahlen Stück für Stück mit mod zerlegen
 \end{itemize}
 
 

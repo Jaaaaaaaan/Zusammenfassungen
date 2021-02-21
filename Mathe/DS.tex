@@ -136,7 +136,7 @@ Erzeuger von $\mathbb{Z}_{n}$ sind genau die Elemente von $\mathbb{Z}_{n}^{*}\Ri
 \item $\langle g \rangle:=\left\lbrace g^{i}\mid i \in \mathbb{Z}\right\rbrace$ ist \textbf{von $\boldsymbol{g}$ erzeugte Untergruppe}
 \item $g \circ U=\left\lbrace g\circ u \mid u \in U \right\rbrace$ ist eine \textbf{(Links-)Nebenklasse} ("LNK") von $U,\; \vert g\circ U\vert =\vert U\vert$, 2 LNK sind entweder gleich oder disjunkt $\Rightarrow$ jedes $g\in G$ liegt in genau einer LNK (nämlich $g\circ U$)
 \item \textbf{Satz von Lagrange:} $\vert G \vert = \vert G : U \vert \cdot \vert U \vert\;\;\;\;$  ( $\vert G : U \vert=\#$ LNK von $U$ in $G$=Index von $U$ in $G$)\\ $\vert G \vert$ heißt Ordnung von $G$, o$(g):=\vert \langle g\rangle \vert$ Ordnung von $g$
-\item \textbf{Satz von Euler-Fermat:} Seien $n\in \mathbb{N}, a\in \mathbb{Z}$ mit ggT$(a,n)=1$. Dann gilt $a^{\phi(n)}\equiv 1 \text{ mod } n$
+\item \textbf{Satz von Euler-Fermat:} Seien $n\in \mathbb{N}, a\in \mathbb{Z}$ mit ggT$(a,n)=1$. Dann gilt $a^{\phi(n)}\equiv 1 \text{ mod } n$. (bei kleinem Fermat gilt $n$ prim)
 \item für Beweise bieten sich oft Verknüpfungstafeln an, folgende Methoden helfen beim effizient rechnen:
 \end{itemize}
 
@@ -190,7 +190,36 @@ Um damit Nachricht $m\leq c$ zu verschlüsseln:
 
 
 \subsection{Aussagenlogik}
-%Kontraposition siehe VL 6
+\begin{itemize}
+\item $\top/\perp=$ wahr/falsch; $\land, \lor$ kommutativ, assoziativ, distributiv in beide Richtungen\\ \textbf{De Morgansche Gesetze:} $\lnot (x\land y)=\lnot x \lor \lnot y, \lnot (x\lor y)=\lnot x \land \lnot y$
+\item jeder \textbf{Ausdruck} $A$ (=Verbindung von $\top,\perp,\lnot,\land,\lor,$ Variablensymbolen ) definiert eine \textbf{boolsche Funktion} \\ $f_{A}: \left\lbrace 0,1\right\rbrace ^{n} \rightarrow \left\lbrace 0,1\right\rbrace;\;\;A$ heißt \textbf{tautologisch/Tautologie} wenn $f_{A}(a_{1},\dotsc, a_{n})=1$ für alle $a_{1},\dotsc, a_{n} \in \left\lbrace 0,1\right\rbrace$  
+\item schreibe $A\Rightarrow B$ für $\lnot A\lor B, A\Leftrightarrow B$ für $(A\Rightarrow B)\land (B\Rightarrow A)$ (d.h. $\Rightarrow$ ist immer war außer für $1 \Rightarrow 0,\\ \Leftrightarrow$ ist wahr für $1\Leftrightarrow 1$ und $0\Leftrightarrow 0$); es gilt $A\Rightarrow B$ äquivalent zu $\lnot B\Rightarrow \lnot A$ (\textbf{Kontraposition})
+\item Ausdrücke $A,B$ sind \textbf{äquivalent} wenn $f_{A}=f_{B}$ (d.h. wenn $A\Leftrightarrow B $ Tautologie); $A$ \textbf{impliziert} $B$ ($A\models B$) wenn $A\Rightarrow B$ Tautologie
+\item \textbf{Darstellungssatz:} für jede $n$-stellige boolsche Funktion $f$ existiert Ausdruck $A$ in $n$ Variablen, so dass $f_{A}=f$
+\item  \textbf{disjunktive Normalform} (DNF): $\bigvee_{i} \bigwedge_{j} L_{ij};\;\;$\textbf{konjunktive Normalform} (KNF): $\bigwedge_{i} \bigvee_{j} L_{ij}$\\
+Beispiel: Sei $f$ gegeben durch Tabelle. Es gilt $f=f_{A}=f_{B}$.
+\end{itemize}
+ \begin{tabular}{c|c}
+$a_{1},a_{2}$ & $f(a_{1},a_{2})$\\
+\hline
+0,0&0\\
+0,1&1\\
+1,0&0\\
+1,1&1
+\end{tabular} $A=\underbrace{(\underbrace{\lnot X_{1}}_{\text{\textbf{Literal} } L_{ij}} \land X_{2})\lor \underbrace{(X_{1}\land X_{2})}_{\text{\textbf{Klausel}}}}_{\text{DNF}}\;\;\;B=\underbrace{(X_{1}\lor X_{2})\land (\lnot X_{1}\lor X_{2})}_{\text{KNF}}$
+\begin{itemize}
+\item eine Aussage in \textit{KNF (!!)} heißt \textbf{Horn}, falls jede Klausel maximal ein positives Literal ($L_{ij}$ der Form $X$) enthält
+\item Algorithmus für \textbf{Horn-SAT:} 
+\begin{enumerate}
+\item suche nach Klausel der Gestalt $X$, lösche dann alle Literale der Gestalt $\lnot X$
+\item falls dadurch leere Klausel entsteht \texttt{return} NEIN
+\item gehe zu 1. solange noch etwas gelöscht werden kann; danach \texttt{return} JA 
+\end{enumerate}
+Beispiel: $A=(X_{1}\lor \lnot X_{2}\lor \lnot X_{3})\land X_{3}\;\;\;$ Ausdruck ist Horn $\Rightarrow$ Horn-SAT Algorithmus anwendbar\\
+$X_{3}$ ist eine Klausel $\Rightarrow \lnot X_{3}$ streichen \\
+$A\Leftrightarrow (X_{1}\lor \lnot X_{2})\land X_{3}\;\;\;\;\; \Rightarrow$ JA (ist erfüllbar)
+\item Beweise in Aussagenlogik über Ausdrücke umformen oder Wertetabelle
+\end{itemize}
 
 
 \subsection{Relationen}

@@ -7,4 +7,4 @@
 
 - Die wichtigen LA Äquivalenzen stehen am Ende um den Zusammenhang klar zu machen ohne alle 17 mal aufzuschreiben; in den anderen Abschnitten steht genug um zu erkennen woher eine bestimmte Äquivalenz jeweils kommt 
 
-- Selbstverständlich kannst du auch noch kürzen/ergänzen (nur möglichst auf einem anderen Branch so lange ich noch nicht fertig bin...)
+To Do: DS 110.2, noch mehr Verfahren aus den Übungen ergänzen, alles nochmal kontrollieren 

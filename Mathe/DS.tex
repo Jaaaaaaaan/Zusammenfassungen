@@ -137,7 +137,7 @@ Erzeuger von $\mathbb{Z}_{n}$ sind genau die Elemente von $\mathbb{Z}_{n}^{*}\Ri
 \item $g \circ U=\left\lbrace g\circ u \mid u \in U \right\rbrace$ ist eine \textbf{(Links-)Nebenklasse} ("LNK") von $U,\; \vert g\circ U\vert =\vert U\vert$, 2 LNK sind entweder gleich oder disjunkt $\Rightarrow$ jedes $g\in G$ liegt in genau einer LNK (nämlich $g\circ U$)
 \item \textbf{Satz von Lagrange:} $\vert G \vert = \vert G : U \vert \cdot \vert U \vert\;\;\;\;$  ( $\vert G : U \vert=\#$ LNK von $U$ in $G$=Index von $U$ in $G$)\\ $\vert G \vert$ heißt Ordnung von $G$, o$(g):=\vert \langle g\rangle \vert$ Ordnung von $g$
 \item \textbf{Satz von Euler-Fermat:} Seien $n\in \mathbb{N}, a\in \mathbb{Z}$ mit ggT$(a,n)=1$. Dann gilt $a^{\phi(n)}\equiv 1 \text{ mod } n$. (bei kleinem Fermat gilt $n$ prim)
-\item für Beweise bieten sich oft Verknüpfungstafeln an, folgende Methoden helfen beim effizient rechnen:
+\item für Beweise bieten sich oft Verknüpfungstafeln an, folgende Methoden helfen beim effizient rechnen: Kongruenz mit kleineren negativen Zahlen ausnutzen, Operation kommutativ $\Rightarrow$ Tafel symmetrische bzgl. Hauptdiagonale, Sudokuprinzip (jede Zahl nur ein mal pro Zeile/Spalte)
 \end{itemize}
 
 
@@ -222,7 +222,8 @@ $G$ $k$-fach kantenzusammenhängend $\Leftrightarrow$ für je 2 $a,b\in V$ gibt 
 
 \subsection{Gerichtete Graphen}
 \begin{itemize}
-\item für gerichtete Graphen gilt $E\subseteq V\times V;\;\;G^{-1}=(V,E^{-1})$ mit $E^{-1}=\left\lbrace (y,x)\mid (x,y)\in E\right\rbrace$ (Pfeile umkehren) 
+\item für gerichtete Graphen gilt $E\subseteq V\times V;\;\;G^{-1}=(V,E^{-1})$ mit $E^{-1}=\left\lbrace (y,x)\mid (x,y)\in E\right\rbrace$ (Pfeile umkehren);\\ 
+$G[V']=(V',E\cap (V'\times V'));\;\;$ "Schleifen" sind erlaubt ("Schleife" = gerichteter Kreis der Länge 1)
 \item Für $u,v\in V$ schreibe $u\preceq v$, falls es in $G$ einen Pfad von $u$ nach $v$ gibt. $u\preceq v \Leftrightarrow \exists$ Kantenzug von $u$ nach $v$ in $G;\;\;\;
 \preceq $ Quasiordnung, $\preceq$ Ordnung wenn es in $G$ keine Kreise gibt 
 \item Schreibe $u \sim v$ falls $u\preceq v \land v\preceq u$. Die Äquivalenzklassen von $\sim$ heißen die \textbf{starken Zusammenhangskomponenten} von $G$ ("SZK")
@@ -263,7 +264,7 @@ $a_{1},a_{2}$ & $f(a_{1},a_{2})$\\
 Beispiel: $A=(X_{1}\lor \lnot X_{2}\lor \lnot X_{3})\land X_{3}\;\;\;$ Ausdruck ist Horn $\Rightarrow$ Horn-SAT Algorithmus anwendbar\\
 $X_{3}$ ist eine Klausel $\Rightarrow \lnot X_{3}$ streichen \\
 $A\Leftrightarrow (X_{1}\lor \lnot X_{2})\land X_{3}\;\;\;\;\; \Rightarrow$ JA (ist erfüllbar)
-\item Beweise in Aussagenlogik über Ausdrücke umformen oder Wertetabelle
+\item Beweise in Aussagenlogik über Ausdrücke umformen oder Wertetabelle oder Fallunterscheidung
 \end{itemize}
 
 
@@ -286,7 +287,7 @@ Beispiele: Teilbarkeitsrelation auf $\mathbb{Z}$; jede Äquivalenzrelation; $\su
 
 \begin{itemize}
 \item \textbf{maximales Element} von $M$, falls $xRy$ schon $x=y$ impliziert für alle $y\in M$; \textbf{minimales Element} von $M$, falls $yRx$ schon $x=y$ impliziert für alle $y\in M$
-\item \textbf{größtest Element} von $M$, galls $yRx$ für alle $y\in M$; \textbf{kleinstes Element} von $M$, galls $xRy$ für alle $y\in M$ 
+\item \textbf{größtest Element} von $M$, falls $yRx$ für alle $y\in M$; \textbf{kleinstes Element} von $M$, falls $xRy$ für alle $y\in M$ 
 \end{itemize}
 
 \item gibt es ein größtes Element von $M$, so ist es eindeutig bestimmt und auch das einzige maximale Element von $M$; analog für kleinstes 
@@ -294,6 +295,6 @@ Beispiele: Teilbarkeitsrelation auf $\mathbb{Z}$; jede Äquivalenzrelation; $\su
 \item Es existiert immer eine Quasiordnung auf $A$ die $R$ enthält. Sei $R'$ die kleinste Quasiordnung die $R$ enthält (\textbf{Transitive reflexive Hülle}). Dann gilt $R'=\bigcup_{i\geq 0} R^{i}$
 \item Es existiert immer eine transitive Relation auf $A$ die $R$ enthält. Sei $R'$ die kleinste transitive Relation die $R$ enthält (\textbf{transitive Hülle}). Dann gilt $R'=\bigcup_{i\geq \boldsymbol{1}} R^{i}$
 \end{itemize}
-
+\textit{Hinweis: In den Zusammenfassungen wird die Schreibweise} $x_{1},\dotsc ,x_{n}$ \textit{verwendet um Platz zu sparen,} \textit{gebräuchlicher ist aber} $x_{1},x_{2},\dotsc ,x_{n}$
 
 \end{document}

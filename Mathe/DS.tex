@@ -182,10 +182,55 @@ Um damit Nachricht $m\leq c$ zu verschlüsseln:
 
 
 \subsection{Ungerichtete Graphen}
+\begin{center}
+\includegraphics[scale=0.48]{typische_graphen.jpg} 
+\includegraphics[scale=0.72]{zusammenhangskomponenten.jpg} 
+\includegraphics[scale=0.55]{bloecke.jpg} 
+\end{center}
+
+\begin{itemize}
+\item \textbf{Komplementgraph} $\overline{G}:=\left(V,\begin{pmatrix}
+V\\2
+\end{pmatrix}\setminus E \right)\;\;\;\;$  (statt $\begin{pmatrix} V\\2 \end{pmatrix}$ scheint $\left\lbrace X \subset V : \vert X \vert=2\right\rbrace$ sicherer zu sein)
+\item $G_{1}=(V_{1},E_{1}), G_{2}=(V_{2},E_{2})$ sind \textbf{Isomorph}, wenn es eine Bijektion $f:V_{1}\rightarrow V_{2}$ gibt, so dass $\left\lbrace u,v\right\rbrace \in E_{1}$ g.d.w. $\left\lbrace f(u),f(v)\right\rbrace \in E_{2}$ für alle $u,v\in V_{1}.\;\;$ ($G_{1}\cong G_{2}$)("sind $G_{1},G_{2}$ gleich wenn man die Knoten in $G_{2}$ umbenennt?")
+\item \textbf{Subgraph} von $G$ heißt ein Graph $H$ mit $V(H)\subseteq V(G),E(H)\subseteq E(G)$. $H$ heißt \textbf{induzierter Subgraph} wenn $E(H)=E(G)\cap \begin{pmatrix} V(H)\\2\end{pmatrix}$ (also wenn aus $G$ nur Knoten und nur die damit verbundenen Kanten gelöscht wurden), wir schreiben $H=G[V(H)]$
+\item ein Graph ist \textbf{$\boldsymbol{k}$-färbbar}, wenn die Knoten so in $k$ Farben angemalt werden könnten, dass 2 benachbarte Knoten nie die gleiche Farbe haben (z.B. $C_{n}$ immer 3-färbbar, 2-färbbar g.d.w. $n$ gerade)
+\item $G$ zweifärbbar (=\textbf{bipartit}) g.d.w. es in $G$ keine ungeraden Kreise gibt; $G$ ist bipartit g.d.w. wenn disjunkte $A,B$ (\textbf{Partitionsklassen}) existieren, so dass $V(G)=A\cup B\land \begin{pmatrix} A\\2\end{pmatrix}\cap E= \begin{pmatrix} B\\2\end{pmatrix}\cap E =\emptyset$
+\item Graph ohne Kreise = \textbf{Wald;} zusammenhängender Graph ohne Kreise = \textbf{Baum,} für Bäume gilt $\vert E \vert =\vert V\vert -1$; Knoten mit deg$=1$ heißen \textbf{Blätter}
+\item $G$ ist $\boldsymbol{k}$\textbf{-fach zusammenhängend} wenn $G\setminus X=G[V\setminus X]$ zusammenhängend ist für alle $X\subseteq V$ mit $\vert X\vert=k -1$;\\ 
+$G$ $k$-fach Zusammenhängend $\Leftrightarrow$ $G$ enthält für alle $a,b\in V$ mindestens $k$ paarweise unabhängige Pfade von $a$ nach $b$ (unabhängig heißt haben nur Anfangs- und Endpunkt gemeinsam)
+\item $G$ ist \textbf{zweifach zusammenhängend}  $\Leftrightarrow G$ kann aus einem Kreis durch sukzessives Anhängen von Pfaden konstruiert werden kann $\Leftrightarrow$ es gibt keine Gelenkpunkte in $G$ 
+\item Sei $A$ Menge der Gelenkpunkte von $G$, $\mathcal{B}$ Menge der Blöcke, dann ist ($A\cup \mathcal{B}, \left\lbrace \left\lbrace a, B\right\rbrace \mid a\in A, B\in \mathcal{B}, a\in B\right\rbrace)$ der \textbf{Blockgraph} von $G$; Blockgraph ist ein Wald und  für $G$ zusammenhängend ein Baum
+\item Pfade sind \textbf{disjunkt} wenn sie keine Knoten gemeinsam haben und \textbf{kantendisjunkt} falls sie keine Kanten gemeinsam haben
+\item \textbf{Satz von Menger:} Seien $A,B\subseteq V$. Dann ist die maximale Anzahl von paarweise disjunkten $A$-$B$-Pfaden in $G$ gleich der Mächtigkeit einer kleinsten Knotenmenge, die $A$ von $B$ in $G$ \textbf{trennt} (aus der also jeder $A$-$B$-Pfad einen Knoten enthält)
+\item \textbf{Kantengraph} $L(G)$ hat die Knotenmenge $E$ und Kantenmenge $\left\lbrace \left\lbrace e,f \right\rbrace \mid e,f \in E, \vert e \cap f\vert =1\right\rbrace$. Ist $(u_{0},\dotsc, u_{n})$ Kantenzug/Pfad in $G$, so ist $(\left\lbrace  u_{0},u_{1}\right\rbrace,\dotsc, \left\lbrace u_{n-1},u_{n}\right\rbrace)$ Kantenzug/Pfad in $L(G)$
+\item die maximale Anzahl von kantendisjunkten Pfaden von $a$ nach $b$ ist gleich der Mächtigkeit einer kleinsten Kantenmenge, die $a$ von $b$ \textbf{trennt} (trennt hat hier andere Bedeutung als bei Knoten: $F\subseteq E$ trennt $a$ und $b$, wenn es in $(V, E\setminus F)$ keinen Kantenzug von $a$ nach $b$ gibt)
+\item $G$ ist $\boldsymbol{k}$-\textbf{fach kantenzusammenhängend} falls für alle $F \subseteq E$ mit $\vert F \vert <k$ gilt $(V,E\setminus F)$ ist zusammenhängend;
+$G$ $k$-fach kantenzusammenhängend $\Leftrightarrow$ für je 2 $a,b\in V$ gibt es mindestens $k$ kantendisjunkte Pfade von $a$ nach $b$
+\item \textbf{offener Eulerzug} = Kantenzug, der jede Kante von $G$ genau einmal durchläuft; \textbf{(geschlossener) Eulerzug} = Eulerzug bei dem Anfangs- und Endknoten gleich sind (Haus vom Nikolaus)
+\item es gibt einen Eulerzug in $G\Leftrightarrow \forall v\in V :$ deg $v$ gerade; es gibt einen offenen Eulerzug in $G\Leftrightarrow$ es gibt genau 2 Knoten von ungeradem Grad in $G$
+\item $M\subseteq E$ heißt \textbf{Paarung} von $G$, falls die Element von $M$ paarweise disjunkt sind. Für \textbf{perfekte Paarungen} gilt $2\vert M\vert=\vert V\vert$. $M$ ist eine \textbf{Paarung von} $\boldsymbol{S\subseteq V}$, falls $M$ Paarung von $G$ und jedes Element von $S$ in einer Kante von $M$ auftaucht.
+\item Pfad in $G$ heißt \textbf{alternierend} bzgl. $M$, falls er abwechselnd über Kanten aus $M$ und $E\setminus M$ läuft;\\ ein \textit{alternierender} Pfad $P$ heißt \textbf{augmentierend} bzgl. $M$, falls Start- und Endpunkt von $P$ in keiner Kante aus $M$ liegen ($P$ beginnt und endet also auf Kante aus $E\setminus M$)
+\item \textbf{Lemma von Berge:} Eine Paarung $M$ von $G$ ist genau dann größtmöglich, wenn es keinen augmentierenden Pfad in $G$ bzgl. $M$ gibt.
+\item für $S\subseteq V$ heißt $N(S)=\left\lbrace n\in V\mid \exists s\in S  \text{ mit } s \text{ Nachbar von }n\right\rbrace$ die \textbf{Nachbarschaft} von $S$
+\item \textbf{Heiratssatz von Hall:} Sei $\left\lbrace A,B \right\rbrace$ Bipartition von $G$. Dann gibt es genau dann eine Paarung von $A$ in $G$, wenn $\vert N(S)\vert\geq \vert S\vert$ für alle $S\subseteq A$.$\;\;\;\; \Rightarrow k$-reguläre (=jeder Knoten hat deg $k$), bipartite Graphen haben eine perfekte Paarung 
+\item Eine \textbf{Überdeckung} von $G$ ist eine Teilmenge $U\subseteq V$, so dass jede Kante von $G$ ein Element aus $U$ enthält. \textbf{Satz von König:} Die größe einer minimalen Überdeckung ist gleich der Größe einer größten Paarung von $G$.
+\item Handschlaglemma für Graphen: $\sum_{v\in V} \text{deg }v=2\vert E \vert\;\;\;$ (=gerade!!, das ist wichtig für Beweise)
+\end{itemize}
 
 
 
 \subsection{Gerichtete Graphen}
+\begin{itemize}
+\item für gerichtete Graphen gilt $E\subseteq V\times V;\;\;G^{-1}=(V,E^{-1})$ mit $E^{-1}=\left\lbrace (y,x)\mid (x,y)\in E\right\rbrace$ (Pfeile umkehren) 
+\item Für $u,v\in V$ schreibe $u\preceq v$, falls es in $G$ einen Pfad von $u$ nach $v$ gibt. $u\preceq v \Leftrightarrow \exists$ Kantenzug von $u$ nach $v$ in $G;\;\;\;
+\preceq $ Quasiordnung, $\preceq$ Ordnung wenn es in $G$ keine Kreise gibt 
+\item Schreibe $u \sim v$ falls $u\preceq v \land v\preceq u$. Die Äquivalenzklassen von $\sim$ heißen die \textbf{starken Zusammenhangskomponenten} von $G$ ("SZK")
+
+%gerichtete Bäume sind hier nicht enthalten weil ja hoffentlich nicht vorausgesetzt?
+
+\end{itemize}
+\textit{Algorithmen für gerichtete Graphen werden nicht geprüft}
 
 
 
@@ -222,6 +267,33 @@ $A\Leftrightarrow (X_{1}\lor \lnot X_{2})\land X_{3}\;\;\;\;\; \Rightarrow$ JA (
 \end{itemize}
 
 
+
 \subsection{Relationen}
-%beachte hier evtl auch Grundlagen aus VL 1 und VL3
+\begin{itemize}
+\item $R\subseteq A\times B$ heißt Relation, wir schreiben $(a,b) \in R$ oder $aRb$
+\item mögliche Eigenschaften von $R\subseteq A\times A$: \textbf{reflexiv} ($aRA$ für alle $a\in A$); \textbf{transitiv} ($aRb\land bRc \Rightarrow aRc$ für alle $a,b,c\in A$); \textbf{symmetrisch} ($aRb\Rightarrow bRa$ für alle $a,b \in A$); \textbf{antisymmetrisch} ($aRb\land bRa \Rightarrow a=b$ für alle $a,b\in A$ )
+\item $R$ ist eine \textbf{Äquivalenzrelation} ("ÄR") falls gilt $R$ reflexiv, symmetrisch, transitiv; $R_{1}\cap R_{2}$ ist immer Äquivalenzrelation 
+\item $a/R:=\left\lbrace b\in A\mid (a,b) \in R\right\rbrace$ heißt \textbf{Äquivalenzklasse} von $a;\; A/R:=\left\lbrace a/R\mid a\in A\right\rbrace$ Menge der Äquivalenzklassen  \\
+2 Äquivalenzklassen sind entweder gleich oder disjunkt
+\item \textbf{Partition} ist eine Menge $\mathcal{P}$ deren Elemente Teilmengen von $A$ sind, so dass gilt $\bigcup_{X\in \mathcal{P}} X=A$ und alle $X$ sind gleich oder disjunkt
+
+%Hasse-Diagramme sind soweit ich das verstehe zum Glück nicht gefordert
+
+\item $R$ ist eine \textbf{Ordnung} falls $R$ reflexiv, antisymmetrisch, transitiv; \textbf{Quasiordnung} falls $R$ reflexiv und transitiv\\
+Beispiele: Teilbarkeitsrelation auf $\mathbb{Z}$; jede Äquivalenzrelation; $\subseteq$ (i.A. nicht total)
+\item $R$ ist \textbf{totale (Quasi-) Ordnung} falls $R$ eine (Quasi-) Ordnung ist und je zwei Elemente $x,y$ von $A$ vergleichbar sind (d.h. $(x,y)\in R\lor (y,x)\in R)\;\;\;\;$ Beispiele: $\leq$ auf $\mathbb{R}$; Äquivalenzrelationen mit nur einer Äquivalenzklasse; $R=\left\lbrace (a,b) \in \mathbb{C}\times \mathbb{C}: \vert a\vert \leq \vert b \vert \right\rbrace$ 
+\item für $M\subseteq A$ heißt $x\in M\dotsc$ 
+
+\begin{itemize}
+\item \textbf{maximales Element} von $M$, falls $xRy$ schon $x=y$ impliziert für alle $y\in M$; \textbf{minimales Element} von $M$, falls $yRx$ schon $x=y$ impliziert für alle $y\in M$
+\item \textbf{größtest Element} von $M$, galls $yRx$ für alle $y\in M$; \textbf{kleinstes Element} von $M$, galls $xRy$ für alle $y\in M$ 
+\end{itemize}
+
+\item gibt es ein größtes Element von $M$, so ist es eindeutig bestimmt und auch das einzige maximale Element von $M$; analog für kleinstes 
+\item für $R\subseteq A\times A$ ist $R\circ R=\left\lbrace (a_{1},a_{3})\in A\times A\mid \text{ es gibt } a_{2} \in A \text{ mit } (a_{1},a_{2}) \in R\land (a_{2},a_{3})\in R\right\rbrace; \;R^{0}=\left\lbrace (a,a) \mid a\in A\right\rbrace,$\\ $R^{1}=R, R^{2}=R\circ R$ etc. (im gerichteten Graph zu $R$ entspricht $R^{k}$ allen "Abkürzungen" der Länge $k$)
+\item Es existiert immer eine Quasiordnung auf $A$ die $R$ enthält. Sei $R'$ die kleinste Quasiordnung die $R$ enthält (\textbf{Transitive reflexive Hülle}). Dann gilt $R'=\bigcup_{i\geq 0} R^{i}$
+\item Es existiert immer eine transitive Relation auf $A$ die $R$ enthält. Sei $R'$ die kleinste transitive Relation die $R$ enthält (\textbf{transitive Hülle}). Dann gilt $R'=\bigcup_{i\geq \boldsymbol{1}} R^{i}$
+\end{itemize}
+
+
 \end{document}

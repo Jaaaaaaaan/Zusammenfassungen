@@ -7,4 +7,4 @@
 
 - Details können wir dann ja dann individuell noch lokal löschen oder hinzufügen
 
-- To Do Jan: alles nochmal kontrollieren 
+- To Do Jan: DS nochmal kontrollieren 

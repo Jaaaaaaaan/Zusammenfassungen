@@ -49,6 +49,7 @@ Beweise über Gegenbeispiel oder $f(a_{1})=f(a_{2})$ setzen
 \item bei elementfremden Zyklen ist Reihenfolge egal: $(123)(45)=(45)(123)$; Elemente die auf sich selbst abgebildet werden heißen \textbf{Fixpunkte} und müssen nicht notiert werden: $(123)(4)=(123)$; mit welchem Element im Zyklus angefangen wird ist Egal: $(123)(45)=(312)(54)$ 
 \item \textbf{Transposition} = 2-Zyklus, jedes Element von $S_{n}$ kann mit Transpositionen geschrieben werden als:\\ $(a_{1},\dotsc, a_{k})=(a_{1}a_{2})(a_{2}a_{3})\dotsc(a_{k-1}a_{k})$ (nicht elementfremd $\Rightarrow$ Reihenfolge wichtig!!)
 \item bei Komposition von Permutationen für jede Zahl von rechts nach links durchgehen: $\underbrace{(123)}_{\text{\textit{(2)}}}\underbrace{(35)}_{\text{\textit{(1)}}}=\underbrace{(1235)}_{\text{\textit{(3)}}}$\\5 wird in \textit{(1)} auf 3 abgebildet, in \textit{(2)} wird 3 auf 1 abgebildet, also $5\rightarrow 3 \rightarrow 1$ und damit $5\rightarrow 1$  in \textit{(3)} 
+\item für $\alpha=(125)(38)(47)$ ist ord$(\alpha)=\text{kgV}(\underbrace{3,2,2}_{\text{ord der Zyklen}})=6\Rightarrow \alpha^{6}=\text{id}_{X} \Rightarrow \alpha^{n}=\alpha^{n \mod 6}$
 \end{itemize}
 
 
@@ -122,6 +123,7 @@ $\Rightarrow \text{ggT}(1008,499)=1=50\cdot 1008 -101\cdot 499\;\;\;\;\;$ (Bézo
 \subsection{Gruppentheorie}
 \begin{itemize}
 \item Gruppe $(G,\circ)$ (auch $(G;\circ,^{-1},e)$; dann Definition einfach anders formulieren) besteht aus Menge $G$ und innerer Verknüpfung $\circ:G\times G\rightarrow G$ so dass: $\circ$ assoziativ, es existiert  \textbf{neutrales Element} $e$ ($a\circ e=a=e\circ a$ für alle $a\in G$), es existiert \textbf{Inverses} $a^{-1}$ zu jedem $a\in G$ ($a\circ a^{-1}=e=a^{-1}\circ a$)
+\item Beweisen dass es sich um eine Gruppe handelt z.B. per Tabelle möglich, oft kann man auch argumentieren dass Eigenschaften wie Assoziativität geerbt werden
 \item Gruppe heißt \textbf{abelsch}/kommutativ, falls $\circ$ kommutativ ist
 \item $\mathbb{Z}_{n}=\left\lbrace 0,\dotsc,n-1\right\rbrace $ bildet mit Addition mod $n$ eine Gruppe; Symmetrien eines Quadrates ("$D_4"/"D_{8}"$)/Dreiecks etc. bilden ebenfalls eine Gruppe (Komposition führt zu Drehungen, Spiegelungen und Identitätsabbildung)
 \item \textbf{Nullteiler} mod $n$ sind $a\in \mathbb{Z}_{n}\setminus \left\lbrace 0\right\rbrace$ für die $b\in \mathbb{Z}_{n}\setminus \left\lbrace 0\right\rbrace$ existiert mit $a\cdot b\equiv 0 \text{ mod } n$\\
@@ -131,13 +133,30 @@ m ist Einheit mod $n\Leftrightarrow$ m ist kein Nullteiler mod $n\Leftrightarrow
 \item multiplikative Gruppe ist \textbf{zyklisch} falls $g\in G$ existiert mit $G=\left\lbrace g^{j}\mid j \in \mathbb{Z}\right\rbrace$ (Potenzrechengesetze ähnlich wie in $\mathbb{N}$, für additive Gruppen schreibe $G=\left\lbrace jg\mid j \in \mathbb{Z}\right\rbrace$); Erzeuger sind $g\in G,\vert G\vert =n$ so dass $G=\left\lbrace g^{j}\mid j \in \mathbb{Z}_{n}\right\rbrace;$\\
 Erzeuger von $\mathbb{Z}_{n}$ sind genau die Elemente von $\mathbb{Z}_{n}^{*}\Rightarrow$ \# Erzeuger$=\phi(n)$ 
 \item für $p$ prim ist $(\mathbb{Z}_{p}^{*}, \cdot \text{ mod } n$) zyklisch; \# Erzeuger$=\phi(p-1)$; diese Erzeuger heißen \textbf{Primitivwurzeln}
+\item "Finden Sie Erzeuger/Primitivwurzel/ist $G$ zyklisch?": i.A. Tabelle erstellen
+\begin{tabular}{c|c c c}
+$n$ & 2&$\cdots$ &$n$\\
+\hline
+$g_{1}^{n}$&&&\\
+$\vdots$ &&&\\
+$g_{n}^{n}$&&&
+\end{tabular}
+
+sobald man für $j\neq0$ auf $g^{j}=1$ kommt kann man aufhören (da nach Definition Erzeuger gilt $j\in \mathbb{Z}_{n}$ und damit immer schon $1=g^{0}$)
+\item Inverses zu Einheit $g$ von $\mathbb{Z}_{n}$ berechnen: EEA$(g,n)\Rightarrow 1=ag+bn\Rightarrow 1\equiv ag \mod n$\\
+Achtung: evtl. ist $a\notin \mathbb{Z}_{n}$!!! (z.B. weil $a$ negativ $\Rightarrow g^{-1}=n-a$)
 \item \textbf{Isomorph}=Strukturgleich ("man kann Elemente einfach umbenennen"), jede zyklische Gruppe ist isomorph entweder zu $(\mathbb{Z},+)$ oder einem $(\mathbb{Z}_{n},+ \text{ mod } n)$; als Beweis das zwei Gruppen nicht isomorph sind genügt z.B. "$G_{1}$ ist zyklisch, $G_{2}$ nicht "
 \item $U\subseteq G$ heißt \textbf{Untergruppe} von $G$ falls $e\in U;\;\; a\circ b \in U \text { für alle } a,b\in U;\;\; a^{-1} \in U \text{ für alle } a \in U$ 
 \item $\langle g \rangle:=\left\lbrace g^{i}\mid i \in \mathbb{Z}\right\rbrace$ ist \textbf{von $\boldsymbol{g}$ erzeugte Untergruppe}
 \item $g \circ U=\left\lbrace g\circ u \mid u \in U \right\rbrace$ ist eine \textbf{(Links-)Nebenklasse} ("LNK") von $U,\; \vert g\circ U\vert =\vert U\vert$, 2 LNK sind entweder gleich oder disjunkt $\Rightarrow$ jedes $g\in G$ liegt in genau einer LNK (nämlich $g\circ U$)
 \item \textbf{Satz von Lagrange:} $\vert G \vert = \vert G : U \vert \cdot \vert U \vert\;\;\;\;$  ( $\vert G : U \vert=\#$ LNK von $U$ in $G$=Index von $U$ in $G$)\\ $\vert G \vert$ heißt Ordnung von $G$, o$(g):=\vert \langle g\rangle \vert$ Ordnung von $g$
+\item "Finden Sie alle $\langle g \rangle$": ausnutzen welche Werte für o$(g)$ nach Lagrange nur möglich sind \\
+"Finden Sie Untergruppen der Ordnung 2/3": $U_{2}$ enthält nur 1 und $g$ mit $g^{2}=1$, $U_{3}$ enthält nur 1 und $g_{1},g_{2}$ mit $g_{1}^{2}=g_{2},g_{2}^{2}=g_{1}$ ($\Rightarrow$  beides per Verknüpfungstafel lösbar)
+\item "Finden Sie die LNK von $U$": per Verknüpfungstafel rechnen, ausnutzen dass LNK gleich oder disjunkt sind
 \item \textbf{Satz von Euler-Fermat:} Seien $n\in \mathbb{N}, a\in \mathbb{Z}$ mit ggT$(a,n)=1$. Dann gilt $a^{\phi(n)}\equiv 1 \text{ mod } n$. (bei kleinem Fermat gilt $n$ prim)
 \item für Beweise bieten sich oft Verknüpfungstafeln an, folgende Methoden helfen beim effizient rechnen: Kongruenz mit kleineren negativen Zahlen ausnutzen, Operation kommutativ $\Rightarrow$ Tafel symmetrische bzgl. Hauptdiagonale, Sudokuprinzip (jede Zahl nur ein mal pro Zeile/Spalte)
+\item dass ggT$(m,n)\geq 2$ kann man auch damit begründen dass beide z.B. 2 in PFZ haben, für ggT von kleinen Zahlen ist keine Begründung nötig
+\item Gleichungen in $\mathbb{Z}_{n}$: $\underline{123^{321}\cdot x\equiv}  3^{321(\mod \phi(40))}\cdot x\equiv 3x \equiv \underline{ 4 (\mod 40)}$ mit $3^{-1}=27$ folgt $x\equiv 27\cdot 4 (\mod 40) $
 \end{itemize}
 
 
@@ -192,22 +211,25 @@ Um damit Nachricht $m\leq c$ zu verschlüsseln:
 \item \textbf{Komplementgraph} $\overline{G}:=\left(V,\begin{pmatrix}
 V\\2
 \end{pmatrix}\setminus E \right)\;\;\;\;$  (statt $\begin{pmatrix} V\\2 \end{pmatrix}$ scheint $\left\lbrace X \subset V : \vert X \vert=2\right\rbrace$ sicherer zu sein)
-\item $G_{1}=(V_{1},E_{1}), G_{2}=(V_{2},E_{2})$ sind \textbf{Isomorph}, wenn es eine Bijektion $f:V_{1}\rightarrow V_{2}$ gibt, so dass $\left\lbrace u,v\right\rbrace \in E_{1}$ g.d.w. $\left\lbrace f(u),f(v)\right\rbrace \in E_{2}$ für alle $u,v\in V_{1}.\;\;$ ($G_{1}\cong G_{2}$)("sind $G_{1},G_{2}$ gleich wenn man die Knoten in $G_{2}$ umbenennt?")
+\item $G_{1}=(V_{1},E_{1}), G_{2}=(V_{2},E_{2})$ sind \textbf{Isomorph}, wenn es eine Bijektion $f:V_{1}\rightarrow V_{2}$ gibt, so dass $\left\lbrace u,v\right\rbrace \in E_{1}$ g.d.w. $\left\lbrace f(u),f(v)\right\rbrace \in E_{2}$ für alle $u,v\in V_{1}.\;\;$(d.h. es muss auch gelten $\vert E_{1}\vert=\vert E_{2}\vert$)\\  ($G_{1}\cong G_{2}$)("sind $G_{1},G_{2}$ gleich wenn man die Knoten in $G_{2}$ umbenennt?")
 \item \textbf{Subgraph} von $G$ heißt ein Graph $H$ mit $V(H)\subseteq V(G),E(H)\subseteq E(G)$. $H$ heißt \textbf{induzierter Subgraph} wenn $E(H)=E(G)\cap \begin{pmatrix} V(H)\\2\end{pmatrix}$ (also wenn aus $G$ nur Knoten und nur die damit verbundenen Kanten gelöscht wurden), wir schreiben $H=G[V(H)]$
-\item ein Graph ist \textbf{$\boldsymbol{k}$-färbbar}, wenn die Knoten so in $k$ Farben angemalt werden könnten, dass 2 benachbarte Knoten nie die gleiche Farbe haben (z.B. $C_{n}$ immer 3-färbbar, 2-färbbar g.d.w. $n$ gerade)
+\item ein Graph ist \textbf{$\boldsymbol{k}$-färbbar}, wenn die Knoten so in $k$ Farben angemalt werden könnten, dass 2 benachbarte Knoten nie die gleiche Farbe haben (z.B. $C_{n}$ immer 3-färbbar, 2-färbbar g.d.w. $n$ gerade) (i.A. einfach durch probieren lösen)
 \item $G$ zweifärbbar (=\textbf{bipartit}) g.d.w. es in $G$ keine ungeraden Kreise gibt; $G$ ist bipartit g.d.w. wenn disjunkte $A,B$ (\textbf{Partitionsklassen}) existieren, so dass $V(G)=A\cup B\land \begin{pmatrix} A\\2\end{pmatrix}\cap E= \begin{pmatrix} B\\2\end{pmatrix}\cap E =\emptyset$
 \item Graph ohne Kreise = \textbf{Wald;} zusammenhängender Graph ohne Kreise = \textbf{Baum,} für Bäume gilt $\vert E \vert =\vert V\vert -1$; Knoten mit deg$=1$ heißen \textbf{Blätter}
+\item "Geben Sie bis auf Isomorphie alle Bäume an für die gilt...." $\Rightarrow$ alle Kombinationen von Knotengraden durchgehen, die bei gegebenem $\vert V\vert$ in Frage kommen 
 \item $G$ ist $\boldsymbol{k}$\textbf{-fach zusammenhängend} wenn $G\setminus X=G[V\setminus X]$ zusammenhängend ist für alle $X\subseteq V$ mit $\vert X\vert=k -1$;\\ 
 $G$ $k$-fach Zusammenhängend $\Leftrightarrow$ $G$ enthält für alle $a,b\in V$ mindestens $k$ paarweise unabhängige Pfade von $a$ nach $b$ (unabhängig heißt haben nur Anfangs- und Endpunkt gemeinsam)
-\item $G$ ist \textbf{zweifach zusammenhängend}  $\Leftrightarrow G$ kann aus einem Kreis durch sukzessives Anhängen von Pfaden konstruiert werden kann $\Leftrightarrow$ es gibt keine Gelenkpunkte in $G$ 
-\item Sei $A$ Menge der Gelenkpunkte von $G$, $\mathcal{B}$ Menge der Blöcke, dann ist ($A\cup \mathcal{B}, \left\lbrace \left\lbrace a, B\right\rbrace \mid a\in A, B\in \mathcal{B}, a\in B\right\rbrace)$ der \textbf{Blockgraph} von $G$; Blockgraph ist ein Wald und  für $G$ zusammenhängend ein Baum
+\item ob $k$ paarweise unabhängigen Pfade für $k$-fachen Zusammenhang vorliegen muss man i.A. für jedes Paar $(a,b)$ einzeln prüfen, evtl. Aufwand verringern durch Symmetrien möglich, außerden gilt min$\left\lbrace \deg(v)\mid v\in V\right\rbrace \geq k$
+\item $G$ ist \textbf{zweifach zusammenhängend}  $\Leftrightarrow G$ kann aus einem Kreis durch sukzessives Anhängen von Pfaden konstruiert werden kann $\Leftrightarrow$ es gibt keine Gelenkpunkte in $G\Leftrightarrow$ jeder Knoten liegt mit einem anderem auf einem Kreis 
+\item Sei $A$ Menge der Gelenkpunkte von $G$, $\mathcal{B}$ Menge der Blöcke, dann ist ($A\cup \mathcal{B}, \left\lbrace \left\lbrace a, B\right\rbrace \mid a\in A, B\in \mathcal{B}, a\in B\right\rbrace)$ der \textbf{Blockgraph} von $G$; Blockgraph ist ein Wald und  für $G$ zusammenhängend ein Baum\\
+Blöcke sind können nicht als Kantenzüge angegeben werden, am besten einfach zeichnen!
 \item Pfade sind \textbf{disjunkt} wenn sie keine Knoten gemeinsam haben und \textbf{kantendisjunkt} falls sie keine Kanten gemeinsam haben
 \item \textbf{Satz von Menger:} Seien $A,B\subseteq V$. Dann ist die maximale Anzahl von paarweise disjunkten $A$-$B$-Pfaden in $G$ gleich der Mächtigkeit einer kleinsten Knotenmenge, die $A$ von $B$ in $G$ \textbf{trennt} (aus der also jeder $A$-$B$-Pfad einen Knoten enthält)
 \item \textbf{Kantengraph} $L(G)$ hat die Knotenmenge $E$ und Kantenmenge $\left\lbrace \left\lbrace e,f \right\rbrace \mid e,f \in E, \vert e \cap f\vert =1\right\rbrace$. Ist $(u_{0},\dotsc, u_{n})$ Kantenzug/Pfad in $G$, so ist $(\left\lbrace  u_{0},u_{1}\right\rbrace,\dotsc, \left\lbrace u_{n-1},u_{n}\right\rbrace)$ Kantenzug/Pfad in $L(G)$
 \item die maximale Anzahl von kantendisjunkten Pfaden von $a$ nach $b$ ist gleich der Mächtigkeit einer kleinsten Kantenmenge, die $a$ von $b$ \textbf{trennt} (trennt hat hier andere Bedeutung als bei Knoten: $F\subseteq E$ trennt $a$ und $b$, wenn es in $(V, E\setminus F)$ keinen Kantenzug von $a$ nach $b$ gibt)
 \item $G$ ist $\boldsymbol{k}$-\textbf{fach kantenzusammenhängend} falls für alle $F \subseteq E$ mit $\vert F \vert <k$ gilt $(V,E\setminus F)$ ist zusammenhängend;
 $G$ $k$-fach kantenzusammenhängend $\Leftrightarrow$ für je 2 $a,b\in V$ gibt es mindestens $k$ kantendisjunkte Pfade von $a$ nach $b$
-\item \textbf{offener Eulerzug} = Kantenzug, der jede Kante von $G$ genau einmal durchläuft; \textbf{(geschlossener) Eulerzug} = Eulerzug bei dem Anfangs- und Endknoten gleich sind (Haus vom Nikolaus)
+\item \textbf{offener Eulerzug} = Kantenzug, der jede Kante von $G$ genau einmal durchläuft(Haus vom Nikolaus);\\ \textbf{(geschlossener) Eulerzug} = Eulerzug bei dem Anfangs- und Endknoten gleich sind 
 \item es gibt einen Eulerzug in $G\Leftrightarrow \forall v\in V :$ deg $v$ gerade; es gibt einen offenen Eulerzug in $G\Leftrightarrow$ es gibt genau 2 Knoten von ungeradem Grad in $G$
 \item $M\subseteq E$ heißt \textbf{Paarung} von $G$, falls die Element von $M$ paarweise disjunkt sind. Für \textbf{perfekte Paarungen} gilt $2\vert M\vert=\vert V\vert$. $M$ ist eine \textbf{Paarung von} $\boldsymbol{S\subseteq V}$, falls $M$ Paarung von $G$ und jedes Element von $S$ in einer Kante von $M$ auftaucht.
 \item Pfad in $G$ heißt \textbf{alternierend} bzgl. $M$, falls er abwechselnd über Kanten aus $M$ und $E\setminus M$ läuft;\\ ein \textit{alternierender} Pfad $P$ heißt \textbf{augmentierend} bzgl. $M$, falls Start- und Endpunkt von $P$ in keiner Kante aus $M$ liegen ($P$ beginnt und endet also auf Kante aus $E\setminus M$)
@@ -264,19 +286,21 @@ $a_{1},a_{2}$ & $f(a_{1},a_{2})$\\
 Beispiel: $A=(X_{1}\lor \lnot X_{2}\lor \lnot X_{3})\land X_{3}\;\;\;$ Ausdruck ist Horn $\Rightarrow$ Horn-SAT Algorithmus anwendbar\\
 $X_{3}$ ist eine Klausel $\Rightarrow \lnot X_{3}$ streichen \\
 $A\Leftrightarrow (X_{1}\lor \lnot X_{2})\land X_{3}\;\;\;\;\; \Rightarrow$ JA (ist erfüllbar)
-\item Beweise in Aussagenlogik über Ausdrücke umformen oder Wertetabelle oder Fallunterscheidung
+\item Beweise in Aussagenlogik über Ausdrücke umformen oder Wertetabelle (mit Zwischenschritten!!) oder Fallunterscheidung; gleiche Herangehensweise für "gesucht sind alle erfüllenden Belegungen", gilt z.B. Ausdruck $A=B$ müssen in Tabelle nur noch $2^{n-1}$ Belegungen geprüft werden
 \end{itemize}
 
 
 
 \subsection{Relationen}
 \begin{itemize}
-\item $R\subseteq A\times B$ heißt Relation, wir schreiben $(a,b) \in R$ oder $aRb$
+\item $R\subseteq A\times B$ heißt Relation, wir schreiben $(a,b) \in R$ oder $aRb$; für Beweise sind oft Gegenbeispiele hilfreich
 \item mögliche Eigenschaften von $R\subseteq A\times A$: \textbf{reflexiv} ($aRA$ für alle $a\in A$); \textbf{transitiv} ($aRb\land bRc \Rightarrow aRc$ für alle $a,b,c\in A$); \textbf{symmetrisch} ($aRb\Rightarrow bRa$ für alle $a,b \in A$); \textbf{antisymmetrisch} ($aRb\land bRa \Rightarrow a=b$ für alle $a,b\in A$ )
 \item $R$ ist eine \textbf{Äquivalenzrelation} ("ÄR") falls gilt $R$ reflexiv, symmetrisch, transitiv; $R_{1}\cap R_{2}$ ist immer Äquivalenzrelation 
-\item $a/R:=\left\lbrace b\in A\mid (a,b) \in R\right\rbrace$ heißt \textbf{Äquivalenzklasse} von $a;\; A/R:=\left\lbrace a/R\mid a\in A\right\rbrace$ Menge der Äquivalenzklassen  \\
+\item $a/R:=\left\lbrace b\in A\mid (a,b) \in R\right\rbrace$ heißt \textbf{Äquivalenzklasse} ("ÄK") von $a$ ("alles was mit $a$ in Relation steht"); $A/R:=\left\lbrace a/R\mid a\in A\right\rbrace$ Menge der Äquivalenzklassen;
 2 Äquivalenzklassen sind entweder gleich oder disjunkt
 \item \textbf{Partition} ist eine Menge $\mathcal{P}$ deren Elemente Teilmengen von $A$ sind, so dass gilt $\bigcup_{X\in \mathcal{P}} X=A$ und alle $X$ sind gleich oder disjunkt
+\item Relationen können als gerichtete Graphen visualisiert werden; reflexiv=jeder Knoten hat Schlinge, transitiv= für jeden Pfad der Länge 2 gibt es Abkürzung, symmetrisch: wenn $\rightarrow$ dann $\leftrightarrows$, ÄK=Zusammenhangskomponenten; ÄR können auch als ungerichtete Graphen visualisiert werden 
+\item Ordnung heißt man kann das sortieren $\Rightarrow$ Graph darf keine gerichteten Kreise enthalten
 
 %Hasse-Diagramme sind soweit ich das verstehe zum Glück nicht gefordert
 
@@ -292,9 +316,11 @@ Beispiele: Teilbarkeitsrelation auf $\mathbb{Z}$; jede Äquivalenzrelation; $\su
 
 \item gibt es ein größtes Element von $M$, so ist es eindeutig bestimmt und auch das einzige maximale Element von $M$; analog für kleinstes 
 \item für $R\subseteq A\times A$ ist $R\circ R=\left\lbrace (a_{1},a_{3})\in A\times A\mid \text{ es gibt } a_{2} \in A \text{ mit } (a_{1},a_{2}) \in R\land (a_{2},a_{3})\in R\right\rbrace; \;R^{0}=\left\lbrace (a,a) \mid a\in A\right\rbrace,$\\ $R^{1}=R, R^{2}=R\circ R$ etc. (im gerichteten Graph zu $R$ entspricht $R^{k}$ allen "Abkürzungen" der Länge $k$)
-\item Es existiert immer eine Quasiordnung auf $A$ die $R$ enthält. Sei $R'$ die kleinste Quasiordnung die $R$ enthält (\textbf{Transitive reflexive Hülle}). Dann gilt $R'=\bigcup_{i\geq 0} R^{i}$
+\item Es existiert immer eine Quasiordnung auf $A$ die $R$ enthält. Sei $R'$ die kleinste Quasiordnung die $R$ enthält (\textbf{Transitive reflexive Hülle}). Dann gilt $R'=\bigcup_{i\geq 0} R^{i}\;\;\;$  (das ganze berechnen bis $R^{i}=R^{k}$ für $i\geq k$, d.h. bis keinen neuen "Abkürzungen" mehr hinzukommen können)
 \item Es existiert immer eine transitive Relation auf $A$ die $R$ enthält. Sei $R'$ die kleinste transitive Relation die $R$ enthält (\textbf{transitive Hülle}). Dann gilt $R'=\bigcup_{i\geq \boldsymbol{1}} R^{i}$
 \end{itemize}
-\textit{Hinweis: In den Zusammenfassungen wird die Schreibweise} $x_{1},\dotsc ,x_{n}$ \textit{verwendet um Platz zu sparen,} \textit{gebräuchlicher ist aber} $x_{1},x_{2},\dotsc ,x_{n}$
+\textit{Hinweis: In den Zusammenfassungen wird die Schreibweise} $x_{1},\dotsc ,x_{n}$ \textit{verwendet um Platz zu sparen,} \textit{gebräuchlicher ist aber} $x_{1},x_{2},\dotsc ,x_{n}$\\
+\textit{Immer angeben welche Sätze angewendet werden und warum sie anwendbar sind!}\\
+\textit{Bestimmen heißt Begründen! Nicht nur sagen "es gibt ungerade Kreise" sondern auch Beispiel angeben}
 
 \end{document}

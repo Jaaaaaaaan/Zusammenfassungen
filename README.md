@@ -1,10 +1,6 @@
 # Zusammenfassungen
-////Mathe////
+- Enthalten sind nur die Gebieten, die als Schwerpunkte angekündigt wurden (und das nicht ausdrücklich geforderte Grundwissen auf dem sie aufbauen), ganz grundlegende Sachen sind nicht nochmal erklärt (was ist eine Linearkombination, was ist eine Schnittmenge, was ist eine Konjunktion etc.)
 
-- Enthalten sind nur die Gebieten die als Schwerpunkte angekündigt wurden (und natürliche das nicht ausdrücklich geforderte Grundwissen auf dem sie aufbauen), auch so ganz grundlegende Sachen sind nicht nochmal erklärt (was ist eine Linearkombination, was ist eine Schnitmenge etc.)
+- Details die du rausschmeißen willst oder ausführlicher brauchst kannst du ja auch einfach lokal noch ändern
 
-- Die wichtigen LA Äquivalenzen stehen am Ende um den Zusammenhang klar zu machen ohne alle 17 mal aufzuschreiben; in den anderen Abschnitten steht nur genug um zu erkennen woher eine bestimmte Äquivalenz jeweils kommt 
-
-- Details können wir dann ja dann individuell noch lokal löschen oder hinzufügen
-
-- To Do Jan: DS nochmal kontrollieren 
+- Beide Zusammenfassungen sind jetzt fertig. Es ist gut möglich, dass mir beim Üben noch Kleinigkeiten auffallen, die ich gerne ändern würde, das sollte dann aber nix wichtiges sein.
